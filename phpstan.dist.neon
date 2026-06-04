@@ -9,3 +9,5 @@ parameters:
     tipsOfTheDay: false
     bootstrapFiles:
         - tests/phpstan-bootstrap.php
+    stubFiles:
+        - tests/stubs/quiqqer-news.stub

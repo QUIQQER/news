@@ -1,0 +1,24 @@
+<?php
+
+namespace QUI\Projects;
+
+class Project
+{
+    /**
+     * @template TName of bool|string
+     * @param TName $name
+     * @return (TName is 'news.settings.entry.more.amount' ? int : mixed)
+     */
+    public function getConfig(bool|string $name = false): mixed
+    {
+    }
+}
+
+namespace QUI\Interfaces\Projects;
+
+/**
+ * @method string getUrlRewrittenWithHost(array<string, mixed> $pathParams = [], array<string, mixed> $getParams = [])
+ */
+interface Site
+{
+}

@@ -1,11 +1,2 @@
 parameters:
-	ignoreErrors:
-		-
-			message: "#^Parameter \\#1 \\$no of method QUI\\\\Interfaces\\\\Projects\\\\Site\\:\\:nextSiblings\\(\\) expects int, array\\|bool\\|string given\\.$#"
-			count: 1
-			path: types/news-entry.php
-
-		-
-			message: "#^Parameter \\#1 \\$no of method QUI\\\\Interfaces\\\\Projects\\\\Site\\:\\:previousSiblings\\(\\) expects int, array\\|bool\\|string given\\.$#"
-			count: 1
-			path: types/news-entry.php
+	ignoreErrors: []

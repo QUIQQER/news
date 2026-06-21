@@ -221,10 +221,10 @@
             </desc>
 
             <attributes>
-                <attribute default="default">quiqqer.news.settings.newsArticle.layout</attribute>
+                <attribute>quiqqer.news.settings.newsArticle.layout</attribute>
                 <attribute>quiqqer.news.settings.newsArticle.headerImage</attribute>
                 <attribute default="default">quiqqer.news.settings.meta.visibility</attribute>
-                <attribute default="1">quiqqer.news.settings.more.enabled</attribute>
+                <attribute>quiqqer.news.settings.more.enabled</attribute>
                 <attribute default="2">quiqqer.news.settings.more.amount</attribute>
                 <attribute default="1">quiqqer.news.settings.more.showDate</attribute>
                 <attribute default="0">quiqqer.news.settings.more.showTime</attribute>
@@ -246,6 +246,9 @@
                             <text>
                                 <locale group="quiqqer/news" var="quiqqer.news.settings.newsArticle.layout" />
                             </text>
+                            <option value="">
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.newsArticle.layout.projectDefault" />
+                            </option>
                             <option value="default">
                                 <locale group="quiqqer/news" var="quiqqer.news.settings.newsArticle.layout.default" />
                             </option>

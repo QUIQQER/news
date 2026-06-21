@@ -141,6 +141,10 @@
             <de><![CDATA[Standard]]></de>
             <en><![CDATA[Default]]></en>
         </locale>
+        <locale name="quiqqer.news.settings.newsArticle.layout.imageFirst">
+            <de><![CDATA[Headerbild zuerst]]></de>
+            <en><![CDATA[Header image first]]></en>
+        </locale>
         <locale name="quiqqer.news.settings.newsArticle.headerImage">
             <de><![CDATA[Header Bild]]></de>
             <en><![CDATA[Header image]]></en>

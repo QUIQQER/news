@@ -249,6 +249,9 @@
                             <option value="default">
                                 <locale group="quiqqer/news" var="quiqqer.news.settings.newsArticle.layout.default" />
                             </option>
+                            <option value="imageFirst">
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.newsArticle.layout.imageFirst" />
+                            </option>
                         </select>
 
                         <input conf="quiqqer.news.settings.newsArticle.headerImage" class="media-image">

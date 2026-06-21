@@ -59,6 +59,14 @@
             <de><![CDATA[Neuigkeiten]]></de>
             <en><![CDATA[News]]></en>
         </locale>
+        <locale name="admin.types.news.article">
+            <de><![CDATA[News-Artikel]]></de>
+            <en><![CDATA[News Article]]></en>
+        </locale>
+        <locale name="admin.types.news.article.desc">
+            <de><![CDATA[Artikel-Seitentyp für redaktionelle News-Detailseiten]]></de>
+            <en><![CDATA[Article site type for editorial news detail pages]]></en>
+        </locale>
 
         <!-- Site list settings -->
         <locale name="quiqqer.news.list.settings.title">
@@ -116,6 +124,53 @@
             <en><![CDATA[Show only date]]></en>
         </locale>
         <locale name="quiqqer.settings.news.entry.dateAndCreator.hide">
+            <de><![CDATA[Ausgeblendet]]></de>
+            <en><![CDATA[Hide]]></en>
+        </locale>
+
+        <locale name="quiqqer.news.article.settings.title">
+            <de><![CDATA[News-Artikel Einstellungen]]></de>
+            <en><![CDATA[News article settings]]></en>
+        </locale>
+
+        <locale name="quiqqer.news.settings.newsArticle.layout">
+            <de><![CDATA[Layout]]></de>
+            <en><![CDATA[Layout]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.newsArticle.layout.default">
+            <de><![CDATA[Standard]]></de>
+            <en><![CDATA[Default]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.newsArticle.headerImage">
+            <de><![CDATA[Header Bild]]></de>
+            <en><![CDATA[Header image]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.newsArticle.headerImage.description">
+            <de><![CDATA[Optionales Header Bild. Falls leer, wird das Seitenbild verwendet.]]></de>
+            <en><![CDATA[Optional header image. If empty, the site image is used.]]></en>
+        </locale>
+
+        <locale name="quiqqer.news.settings.meta.visibility">
+            <de><![CDATA[Autor und Datum]]></de>
+            <en><![CDATA[Author and date]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.meta.visibility.default">
+            <de><![CDATA[Standard]]></de>
+            <en><![CDATA[Default]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.meta.visibility.showAll">
+            <de><![CDATA[Autor und Datum anzeigen]]></de>
+            <en><![CDATA[Show author and date]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.meta.visibility.showAuthor">
+            <de><![CDATA[Nur Autor anzeigen]]></de>
+            <en><![CDATA[Show only author]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.meta.visibility.showDate">
+            <de><![CDATA[Nur Datum anzeigen]]></de>
+            <en><![CDATA[Show only date]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.meta.visibility.hide">
             <de><![CDATA[Ausgeblendet]]></de>
             <en><![CDATA[Hide]]></en>
         </locale>
@@ -248,6 +303,63 @@
         <locale name="entry.news.nav.title">
             <de><![CDATA[Weitere Neuigkeiten:]]></de>
             <en><![CDATA[Further News:]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.more.title">
+            <de><![CDATA[Weitere Neuigkeiten]]></de>
+            <en><![CDATA[More news]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.more.enabled">
+            <de><![CDATA[Weitere Neuigkeiten anzeigen]]></de>
+            <en><![CDATA[Show more news]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.more.amount">
+            <de><![CDATA[Anzahl weiterer Neuigkeiten]]></de>
+            <en><![CDATA[Number of more news items]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.more.amount.description">
+            <de><![CDATA[Wie viele weitere Neuigkeiten vor und nach dem aktuellen Artikel angezeigt werden.]]></de>
+            <en><![CDATA[How many more news items are displayed before and after the current article.]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.more.showDate">
+            <de><![CDATA[Datum anzeigen]]></de>
+            <en><![CDATA[Show date]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.more.showTime">
+            <de><![CDATA[Uhrzeit anzeigen]]></de>
+            <en><![CDATA[Show time]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.more.template">
+            <de><![CDATA[Vorlage]]></de>
+            <en><![CDATA[Template]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.more.template.default">
+            <de><![CDATA[Standard]]></de>
+            <en><![CDATA[Default]]></en>
+        </locale>
+
+        <locale name="quiqqer.news.settings.guestAuthor.title">
+            <de><![CDATA[News: Gastautor]]></de>
+            <en><![CDATA[News: Guest author]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.guestAuthor.enable">
+            <de><![CDATA[Gastautor aktivieren]]></de>
+            <en><![CDATA[Enable guest author]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.guestAuthor.enable.description">
+            <de><![CDATA[Wenn die Option aktiviert ist, wird der Gastautor als News-Autor angezeigt.]]></de>
+            <en><![CDATA[If enabled, the guest author is shown as the news author.]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.guestAuthor.quiqqerUser">
+            <de><![CDATA[Benutzer]]></de>
+            <en><![CDATA[User]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.guestAuthor.quiqqerUser.description">
+            <de><![CDATA[Falls kein Benutzer im System existiert, bitte das Feld „Name“ unten ausfüllen.]]></de>
+            <en><![CDATA[If no user exists in the system, please fill in the "Name" field below.]]></en>
+        </locale>
+        <locale name="quiqqer.news.settings.guestAuthor.name">
+            <de><![CDATA[Name]]></de>
+            <en><![CDATA[Name]]></en>
         </locale>
         <locale name="sheet.first.page">
             <de><![CDATA[Erste Seite]]></de>

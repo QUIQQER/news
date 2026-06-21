@@ -213,6 +213,153 @@
                 </category>
             </settings>
         </type>
+
+        <type type="types/news-article" extend="QUI\News\Entry" icon="fa fa-newspaper-o">
+            <locale group="quiqqer/news" var="admin.types.news.article" />
+            <desc>
+                <locale group="quiqqer/news" var="admin.types.news.article.desc" />
+            </desc>
+
+            <attributes>
+                <attribute default="default">quiqqer.news.settings.newsArticle.layout</attribute>
+                <attribute>quiqqer.news.settings.newsArticle.headerImage</attribute>
+                <attribute default="default">quiqqer.news.settings.meta.visibility</attribute>
+                <attribute default="1">quiqqer.news.settings.more.enabled</attribute>
+                <attribute default="2">quiqqer.news.settings.more.amount</attribute>
+                <attribute default="1">quiqqer.news.settings.more.showDate</attribute>
+                <attribute default="0">quiqqer.news.settings.more.showTime</attribute>
+                <attribute default="default">quiqqer.news.settings.more.template</attribute>
+                <attribute>quiqqer.news.settings.guestAuthor.enable</attribute>
+                <attribute>quiqqer.news.settings.guestAuthor.quiqqerUser</attribute>
+                <attribute>quiqqer.news.settings.guestAuthor.name</attribute>
+                <attribute>quiqqer.news.settings.guestAuthor.avatar</attribute>
+            </attributes>
+
+            <settings>
+                <category name="news-article-settings">
+                    <settings>
+                        <title>
+                            <locale group="quiqqer/news" var="quiqqer.news.article.settings.title" />
+                        </title>
+
+                        <select conf="quiqqer.news.settings.newsArticle.layout">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.newsArticle.layout" />
+                            </text>
+                            <option value="default">
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.newsArticle.layout.default" />
+                            </option>
+                        </select>
+
+                        <input conf="quiqqer.news.settings.newsArticle.headerImage" class="media-image">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.newsArticle.headerImage" />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.newsArticle.headerImage.description" />
+                            </description>
+                        </input>
+
+                        <select conf="quiqqer.news.settings.meta.visibility">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.meta.visibility" />
+                            </text>
+                            <option value="default">
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.meta.visibility.default" />
+                            </option>
+                            <option value="showAll">
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.meta.visibility.showAll" />
+                            </option>
+                            <option value="showAuthor">
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.meta.visibility.showAuthor" />
+                            </option>
+                            <option value="showDate">
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.meta.visibility.showDate" />
+                            </option>
+                            <option value="hide">
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.meta.visibility.hide" />
+                            </option>
+                        </select>
+                    </settings>
+                </category>
+
+                <category name="news-article-more-settings">
+                    <settings>
+                        <title>
+                            <locale group="quiqqer/news" var="quiqqer.news.settings.more.title" />
+                        </title>
+
+                        <input conf="quiqqer.news.settings.more.enabled" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.more.enabled" />
+                            </text>
+                        </input>
+
+                        <input conf="quiqqer.news.settings.more.amount" type="number">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.more.amount" />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.more.amount.description" />
+                            </description>
+                        </input>
+
+                        <input conf="quiqqer.news.settings.more.showDate" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.more.showDate" />
+                            </text>
+                        </input>
+
+                        <input conf="quiqqer.news.settings.more.showTime" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.more.showTime" />
+                            </text>
+                        </input>
+
+                        <select conf="quiqqer.news.settings.more.template">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.more.template" />
+                            </text>
+                            <option value="default">
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.more.template.default" />
+                            </option>
+                        </select>
+                    </settings>
+                </category>
+
+                <category name="news-article-guest-author">
+                    <settings>
+                        <title>
+                            <locale group="quiqqer/news" var="quiqqer.news.settings.guestAuthor.title" />
+                        </title>
+
+                        <input conf="quiqqer.news.settings.guestAuthor.enable" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.guestAuthor.enable" />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.guestAuthor.enable.description" />
+                            </description>
+                        </input>
+
+                        <input conf="quiqqer.news.settings.guestAuthor.quiqqerUser" type="text" data-qui="controls/users/Input" data-qui-options-max="1">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.guestAuthor.quiqqerUser" />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.guestAuthor.quiqqerUser.description" />
+                            </description>
+                        </input>
+
+                        <input conf="quiqqer.news.settings.guestAuthor.name" type="text">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.news.settings.guestAuthor.name" />
+                            </text>
+                        </input>
+                    </settings>
+                </category>
+            </settings>
+        </type>
     </types>
 
 </site>

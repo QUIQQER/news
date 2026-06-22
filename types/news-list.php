@@ -31,7 +31,13 @@ $ChildrenList = new QUI\Controls\ChildrenList([
     'showTime' => $Site->getAttribute('quiqqer.settings.news.showTime'),
     'Site' => $Site,
     'where' => [
-        'type' => 'quiqqer/news:types/news-entry'
+        'type' => [
+            'type'  => 'IN',
+            'value' => [
+                'quiqqer/news:types/news-entry',
+                'quiqqer/news:types/news-article'
+            ]
+        ]
     ],
     'limit' => $Site->getAttribute('quiqqer.settings.news.max'),
     'itemtype' => "https://schema.org/ItemList",

@@ -108,7 +108,7 @@
 
 .quiqqer-news-article__image-file {
     display: block;
-    height: var(--_headerImage-height);
+    max-height: var(--_headerImage-height);
     margin-inline: auto;
     max-width: var(--_headerImage-maxWidth);
     object-fit: var(--_headerImage-fit);

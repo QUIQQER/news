@@ -183,16 +183,8 @@ class NewsArticleTest extends TestCase
             }
         };
 
-        $Site = new class ($Project) implements \QUI\Interfaces\Projects\Site {
-            public function __construct(private Project $Project)
-            {
-            }
-
-            public function getProject(): Project
-            {
-                return $this->Project;
-            }
-        };
+        $Site = $this->createStub(\QUI\Interfaces\Projects\Site::class);
+        $Site->method('getProject')->willReturn($Project);
 
         $attributes['Site'] = $Site;
 

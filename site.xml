@@ -2,7 +2,7 @@
 <site>
 
     <types>
-        <type type="types/news-list" extend="QUI\News\NewsList" icon="fa fa-list" child-type="quiqqer/news:types/news-entry">
+        <type type="types/news-list" extend="QUI\News\NewsList" icon="fa fa-list" child-navHide="1">
             <locale group="quiqqer/news" var="admin.types.news.list" />
             <desc>
                 <locale group="quiqqer/intranet" var="admin.types.news.list.desc" />
@@ -18,6 +18,10 @@
                 <attribute default="0">quiqqer.settings.news.showCreator</attribute>
                 <attribute default="1">quiqqer.settings.news.showDate</attribute>
                 <attribute default="0">quiqqer.settings.news.showTime</attribute>
+
+                <!-- default type / layout for new child sites -->
+                <attribute default="quiqqer/news:types/news-article">quiqqer.settings.children.type</attribute>
+                <attribute>quiqqer.settings.children.layout</attribute>
             </attributes>
 
             <!-- list settings -->
@@ -111,6 +115,39 @@
                             </text>
                         </input>
 
+                    </settings>
+                </category>
+
+                <category name="children-defaults">
+                    <settings>
+                        <title>
+                            <locale group="quiqqer/news"
+                                    var="quiqqer.news.list.settings.childrenDefaults.title" />
+                        </title>
+
+                        <input conf="quiqqer.settings.children.type" type="text"
+                               data-qui="controls/projects/project/site/settings/ChildTypeInput">
+                            <text>
+                                <locale group="quiqqer/news"
+                                        var="quiqqer.news.list.settings.childrenDefaults.type" />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news"
+                                        var="quiqqer.news.list.settings.childrenDefaults.type.desc" />
+                            </description>
+                        </input>
+
+                        <input conf="quiqqer.settings.children.layout" type="text"
+                               data-qui="controls/projects/project/site/settings/ChildLayoutInput">
+                            <text>
+                                <locale group="quiqqer/news"
+                                        var="quiqqer.news.list.settings.childrenDefaults.layout" />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news"
+                                        var="quiqqer.news.list.settings.childrenDefaults.layout.desc" />
+                            </description>
+                        </input>
                     </settings>
                 </category>
 

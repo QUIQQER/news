@@ -74,6 +74,28 @@
             <en><![CDATA[News-List settings]]></en>
         </locale>
 
+        <!-- defaults for new child sites -->
+        <locale name="quiqqer.news.list.settings.childrenDefaults.title">
+            <de><![CDATA[Standards für neue Unterseiten]]></de>
+            <en><![CDATA[Defaults for new child sites]]></en>
+        </locale>
+        <locale name="quiqqer.news.list.settings.childrenDefaults.type">
+            <de><![CDATA[Standard-Seitentyp]]></de>
+            <en><![CDATA[Default site type]]></en>
+        </locale>
+        <locale name="quiqqer.news.list.settings.childrenDefaults.type.desc">
+            <de><![CDATA[Seitentyp, der beim Anlegen einer neuen Unterseite vorausgewählt wird. Ist nichts gesetzt, gilt der Standard des Seitentyps.]]></de>
+            <en><![CDATA[Site type that is preselected when creating a new child site. If empty, the site type default is used.]]></en>
+        </locale>
+        <locale name="quiqqer.news.list.settings.childrenDefaults.layout">
+            <de><![CDATA[Standard-Layout]]></de>
+            <en><![CDATA[Default layout]]></en>
+        </locale>
+        <locale name="quiqqer.news.list.settings.childrenDefaults.layout.desc">
+            <de><![CDATA[Layout, das beim Anlegen einer neuen Unterseite vorausgewählt wird. Ist nichts gesetzt, gilt das Standard-Layout.]]></de>
+            <en><![CDATA[Layout that is preselected when creating a new child site. If empty, the default layout is used.]]></en>
+        </locale>
+
         <!-- max site -->
         <locale name="quiqqer.news.list.settings.max">
             <de><![CDATA[Anzahl Neuigkeiten pro Seite]]></de>

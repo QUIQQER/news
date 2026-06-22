@@ -43,6 +43,8 @@ $ChildrenList = new QUI\Controls\ChildrenList([
     'itemtype' => "https://schema.org/ItemList",
     'child-itemtype' => "https://schema.org/NewsArticle",
     'display' => $Site->getAttribute('quiqqer.settings.news.template'),
+    'filter' => $Site->getAttribute('quiqqer.settings.news.filter'),
+    'tags' => $Site->getAttribute('quiqqer.settings.news.tags'),
     'parentInputList' => false
 ]);
 

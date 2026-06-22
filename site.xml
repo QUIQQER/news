@@ -18,6 +18,8 @@
                 <attribute default="0">quiqqer.settings.news.showCreator</attribute>
                 <attribute default="1">quiqqer.settings.news.showDate</attribute>
                 <attribute default="0">quiqqer.settings.news.showTime</attribute>
+                <attribute default="disabled">quiqqer.settings.news.filter</attribute>
+                <attribute>quiqqer.settings.news.tags</attribute>
 
                 <!-- default type / layout for new child sites -->
                 <attribute default="quiqqer/news:types/news-article">quiqqer.settings.children.type</attribute>
@@ -113,6 +115,40 @@
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.list.settings.showTime" />
                             </text>
+                        </input>
+
+                        <select conf="quiqqer.settings.news.filter">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.filter" />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.filter.desc" />
+                            </description>
+                            <option value="disabled">
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.sitetypes.list.settings.filter.disabled" />
+                            </option>
+                            <option value="input">
+                                <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.filter.input" />
+                            </option>
+                            <option value="tags">
+                                <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.filter.tags" />
+                            </option>
+                            <option value="all">
+                                <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.filter.all" />
+                            </option>
+                        </select>
+
+                        <input conf="quiqqer.settings.news.tags"
+                               data-qui="package/quiqqer/tags/bin/tags/Select">
+                            <text>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.sitetypes.list.settings.tags" />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.sitetypes.list.settings.tags.desc" />
+                            </description>
                         </input>
 
                     </settings>

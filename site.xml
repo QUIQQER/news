@@ -42,6 +42,9 @@
                             <option value="cardRows">
                                 <locale group="quiqqer/sitetypes" var="list.template.cardRows"/>
                             </option>
+                            <option value="featuredCards">
+                                <locale group="quiqqer/sitetypes" var="list.template.featuredCards"/>
+                            </option>
                             <option value="imageTop">
                                 <locale group="quiqqer/sitetypes" var="list.template.imageTop"/>
                             </option>

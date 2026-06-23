@@ -1,0 +1,71 @@
+<article class="quiqqer-news-article quiqqer-news-article--{$layout} qui-content-grid"
+         itemscope itemtype="https://schema.org/NewsArticle"
+>
+    <div class="quiqqer-news-article__schema" aria-hidden="true">
+        {$MetaList->create()}
+    </div>
+
+    <header class="quiqqer-news-article__header qui-content-narrow{if $centerHeader} quiqqer-news-article__header--centered{/if}">
+        <h1 class="quiqqer-news-article__title" itemprop="headline">{$Site->getAttribute('title')}</h1>
+
+        {if $tags}
+            <ul class="quiqqer-news-article__tags">
+                {foreach from=$tags item=tag}
+                    <li class="chip">{$tag|escape}</li>
+                {/foreach}
+            </ul>
+        {/if}
+
+        {if $showMeta}
+            <div class="quiqqer-news-article__meta">
+                {if $author && $showAuthor}
+                    <span class="quiqqer-news-article__author" itemprop="author">
+                        {locale group="quiqqer/news" var="entry.news.by"} {$author}
+                    </span>
+                {/if}
+
+                {if $showDate}
+                    <span class="quiqqer-news-article__date">
+                        {locale group="quiqqer/news" var="entry.news.on"}
+                        <time datetime="{$date|date_format:'c'}" itemprop="datePublished">
+                            {locale_date date=$date}
+                        </time>
+                    </span>
+                {/if}
+            </div>
+        {/if}
+
+        {if $Site->getAttribute('short')}
+            <p class="quiqqer-news-article__lead" itemprop="description">{$Site->getAttribute('short')}</p>
+        {/if}
+    </header>
+
+    {if $headerImage}
+        <div class="quiqqer-news-article__image quiqqer-news-article__image--surface qui-content-full">
+            {if $showHeaderImageBlurBackground}
+                <span class="quiqqer-news-article__image-blur" aria-hidden="true">
+                    {image src=$headerImage
+                        class="quiqqer-news-article__image-blur-file"
+                        width="20"
+                    }
+                </span>
+            {/if}
+            {image src=$headerImage
+                class="quiqqer-news-article__image-file"
+                alt=$Site->getAttribute('title')
+            }
+        </div>
+    {/if}
+
+    {if $Site->getAttribute('content')}
+        <section class="quiqqer-news-article__content qui-content-full qui-content-grid qui-content-grid--narrow" itemprop="articleBody">
+            {$Site->getAttribute('content')}
+        </section>
+    {/if}
+
+    {if $showMoreNews}
+        <aside class="quiqqer-news-article__more qui-content-narrow">
+            {include file=$moreTemplate}
+        </aside>
+    {/if}
+</article>

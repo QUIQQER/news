@@ -3,6 +3,98 @@
     <project>
     <settings>
         <config>
+            <section name="news.settings.article">
+                <conf name="defaultLayout">
+                    <type><![CDATA[string]]></type>
+                    <defaultvalue>default</defaultvalue>
+                </conf>
+
+                <conf name="showMoreNews">
+                    <type><![CDATA[boolean]]></type>
+                    <defaultvalue>1</defaultvalue>
+                </conf>
+            </section>
+
+            <section name="news.settings.article.layout.default">
+                <conf name="sectionGap">
+                    <type><![CDATA[string]]></type>
+                    <defaultvalue>normal</defaultvalue>
+                </conf>
+
+                <conf name="titleSize">
+                    <type><![CDATA[string]]></type>
+                    <defaultvalue>normal</defaultvalue>
+                </conf>
+
+                <conf name="centerHeader">
+                    <type><![CDATA[boolean]]></type>
+                </conf>
+
+                <conf name="headerImageMaxHeight">
+                    <type><![CDATA[int]]></type>
+                </conf>
+
+                <conf name="imageFit">
+                    <type><![CDATA[string]]></type>
+                    <defaultvalue>cover</defaultvalue>
+                </conf>
+
+                <conf name="imageWidthMode">
+                    <type><![CDATA[string]]></type>
+                    <defaultvalue>auto</defaultvalue>
+                </conf>
+
+                <conf name="headerImageMaxWidth">
+                    <type><![CDATA[int]]></type>
+                </conf>
+
+                <conf name="headerImageBlurBackground">
+                    <type><![CDATA[boolean]]></type>
+                </conf>
+
+                <conf name="headerBackground">
+                    <type><![CDATA[string]]></type>
+                </conf>
+            </section>
+
+            <section name="news.settings.article.layout.imageFirst">
+                <conf name="sectionGap">
+                    <type><![CDATA[string]]></type>
+                    <defaultvalue>normal</defaultvalue>
+                </conf>
+
+                <conf name="titleSize">
+                    <type><![CDATA[string]]></type>
+                    <defaultvalue>normal</defaultvalue>
+                </conf>
+
+                <conf name="headerImageMaxHeight">
+                    <type><![CDATA[int]]></type>
+                </conf>
+
+                <conf name="imageFit">
+                    <type><![CDATA[string]]></type>
+                    <defaultvalue>cover</defaultvalue>
+                </conf>
+
+                <conf name="imageWidthMode">
+                    <type><![CDATA[string]]></type>
+                    <defaultvalue>auto</defaultvalue>
+                </conf>
+
+                <conf name="headerImageMaxWidth">
+                    <type><![CDATA[int]]></type>
+                </conf>
+
+                <conf name="headerImageBlurBackground">
+                    <type><![CDATA[boolean]]></type>
+                </conf>
+
+                <conf name="headerBackground">
+                    <type><![CDATA[string]]></type>
+                </conf>
+            </section>
+
             <section name="news.settings.general">
                 <conf name="amount">
                     <type><![CDATA[int]]></type>
@@ -61,6 +153,299 @@
                         <locale group="quiqqer/news" var="news.settings.title"/>
                     </text>
                     <icon>fa fa-newspaper-o</icon>
+
+                    <settings name="news.settings.article">
+                        <title>
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.title"/>
+                            </text>
+                        </title>
+
+                        <select conf="news.settings.article.defaultLayout">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.defaultLayout.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.defaultLayout.description"/>
+                            </description>
+                            <option value="default" selected="selected">
+                                <locale group="quiqqer/news" var="news.settings.article.layout.default.option"/>
+                            </option>
+                            <option value="imageFirst">
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageFirst.option"/>
+                            </option>
+                        </select>
+
+                        <input conf="news.settings.article.showMoreNews" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.showMoreNews.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.showMoreNews.description"/>
+                            </description>
+                        </input>
+                    </settings>
+
+                    <settings name="news.settings.article.layout.default">
+                        <title>
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.default.title"/>
+                            </text>
+                        </title>
+
+                        <select conf="news.settings.article.layout.default.sectionGap">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.sectionGap.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.sectionGap.description"/>
+                            </description>
+                            <option value="small">
+                                <locale group="quiqqer/news" var="news.settings.article.size.small"/>
+                            </option>
+                            <option value="normal" selected="selected">
+                                <locale group="quiqqer/news" var="news.settings.article.size.normal"/>
+                            </option>
+                            <option value="large">
+                                <locale group="quiqqer/news" var="news.settings.article.size.large"/>
+                            </option>
+                            <option value="extraLarge">
+                                <locale group="quiqqer/news" var="news.settings.article.size.extraLarge"/>
+                            </option>
+                        </select>
+
+                        <select conf="news.settings.article.layout.default.titleSize">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.titleSize.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.titleSize.description"/>
+                            </description>
+                            <option value="muchSmaller">
+                                <locale group="quiqqer/news" var="news.settings.article.scale.muchSmaller"/>
+                            </option>
+                            <option value="smaller">
+                                <locale group="quiqqer/news" var="news.settings.article.scale.smaller"/>
+                            </option>
+                            <option value="normal" selected="selected">
+                                <locale group="quiqqer/news" var="news.settings.article.scale.normal"/>
+                            </option>
+                            <option value="larger">
+                                <locale group="quiqqer/news" var="news.settings.article.scale.larger"/>
+                            </option>
+                            <option value="muchLarger">
+                                <locale group="quiqqer/news" var="news.settings.article.scale.muchLarger"/>
+                            </option>
+                        </select>
+
+                        <input conf="news.settings.article.layout.default.centerHeader" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.centerHeader.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.centerHeader.description"/>
+                            </description>
+                        </input>
+
+                        <input conf="news.settings.article.layout.default.headerImageMaxHeight" type="number">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerImageMaxHeight.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerImageMaxHeight.description"/>
+                            </description>
+                        </input>
+
+                        <select conf="news.settings.article.layout.default.imageFit">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageFit.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageFit.description"/>
+                            </description>
+                            <option value="cover" selected="selected">
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageFit.cover"/>
+                            </option>
+                            <option value="contain">
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageFit.contain"/>
+                            </option>
+                        </select>
+
+                        <select conf="news.settings.article.layout.default.imageWidthMode"
+                                data-qui="package/quiqqer/core/bin/QUI/controls/settings/Dependency">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageWidthMode.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageWidthMode.description"/>
+                            </description>
+                            <option value="auto" selected="selected">
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageWidthMode.auto"/>
+                            </option>
+                            <option value="content">
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageWidthMode.content"/>
+                            </option>
+                            <option value="custom">
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageWidthMode.custom"/>
+                            </option>
+                        </select>
+
+                        <input conf="news.settings.article.layout.default.headerImageMaxWidth"
+                               type="number"
+                               data-dependency="news.settings.article.layout.default.imageWidthMode"
+                               data-dependency-options="custom">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerImageMaxWidth.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerImageMaxWidth.description"/>
+                            </description>
+                        </input>
+
+                        <input conf="news.settings.article.layout.default.headerImageBlurBackground" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerImageBlurBackground.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerImageBlurBackground.description"/>
+                            </description>
+                        </input>
+
+                        <input conf="news.settings.article.layout.default.headerBackground" type="color">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerBackground.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerBackground.description"/>
+                            </description>
+                        </input>
+                    </settings>
+
+                    <settings name="news.settings.article.layout.imageFirst">
+                        <title>
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageFirst.title"/>
+                            </text>
+                        </title>
+
+                        <select conf="news.settings.article.layout.imageFirst.sectionGap">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.sectionGap.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.sectionGap.description"/>
+                            </description>
+                            <option value="small">
+                                <locale group="quiqqer/news" var="news.settings.article.size.small"/>
+                            </option>
+                            <option value="normal" selected="selected">
+                                <locale group="quiqqer/news" var="news.settings.article.size.normal"/>
+                            </option>
+                            <option value="large">
+                                <locale group="quiqqer/news" var="news.settings.article.size.large"/>
+                            </option>
+                            <option value="extraLarge">
+                                <locale group="quiqqer/news" var="news.settings.article.size.extraLarge"/>
+                            </option>
+                        </select>
+
+                        <select conf="news.settings.article.layout.imageFirst.titleSize">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.titleSize.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.titleSize.description"/>
+                            </description>
+                            <option value="muchSmaller">
+                                <locale group="quiqqer/news" var="news.settings.article.scale.muchSmaller"/>
+                            </option>
+                            <option value="smaller">
+                                <locale group="quiqqer/news" var="news.settings.article.scale.smaller"/>
+                            </option>
+                            <option value="normal" selected="selected">
+                                <locale group="quiqqer/news" var="news.settings.article.scale.normal"/>
+                            </option>
+                            <option value="larger">
+                                <locale group="quiqqer/news" var="news.settings.article.scale.larger"/>
+                            </option>
+                            <option value="muchLarger">
+                                <locale group="quiqqer/news" var="news.settings.article.scale.muchLarger"/>
+                            </option>
+                        </select>
+
+                        <input conf="news.settings.article.layout.imageFirst.headerImageMaxHeight" type="number">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerImageMaxHeight.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerImageMaxHeight.description"/>
+                            </description>
+                        </input>
+
+                        <select conf="news.settings.article.layout.imageFirst.imageFit">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageFit.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageFit.description"/>
+                            </description>
+                            <option value="cover" selected="selected">
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageFit.cover"/>
+                            </option>
+                            <option value="contain">
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageFit.contain"/>
+                            </option>
+                        </select>
+
+                        <select conf="news.settings.article.layout.imageFirst.imageWidthMode"
+                                data-qui="package/quiqqer/core/bin/QUI/controls/settings/Dependency">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageWidthMode.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageWidthMode.description"/>
+                            </description>
+                            <option value="auto" selected="selected">
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageWidthMode.auto"/>
+                            </option>
+                            <option value="content">
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageWidthMode.content"/>
+                            </option>
+                            <option value="custom">
+                                <locale group="quiqqer/news" var="news.settings.article.layout.imageWidthMode.custom"/>
+                            </option>
+                        </select>
+
+                        <input conf="news.settings.article.layout.imageFirst.headerImageMaxWidth"
+                               type="number"
+                               data-dependency="news.settings.article.layout.imageFirst.imageWidthMode"
+                               data-dependency-options="custom">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerImageMaxWidth.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerImageMaxWidth.description"/>
+                            </description>
+                        </input>
+
+                        <input conf="news.settings.article.layout.imageFirst.headerImageBlurBackground" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerImageBlurBackground.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerImageBlurBackground.description"/>
+                            </description>
+                        </input>
+
+                        <input conf="news.settings.article.layout.imageFirst.headerBackground" type="color">
+                            <text>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerBackground.text"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="news.settings.article.layout.headerBackground.description"/>
+                            </description>
+                        </input>
+                    </settings>
 
                     <settings name="news.settings.entry">
                         <title>

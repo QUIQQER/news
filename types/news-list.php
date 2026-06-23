@@ -31,12 +31,20 @@ $ChildrenList = new QUI\Controls\ChildrenList([
     'showTime' => $Site->getAttribute('quiqqer.settings.news.showTime'),
     'Site' => $Site,
     'where' => [
-        'type' => 'quiqqer/news:types/news-entry'
+        'type' => [
+            'type'  => 'IN',
+            'value' => [
+                'quiqqer/news:types/news-entry',
+                'quiqqer/news:types/news-article'
+            ]
+        ]
     ],
     'limit' => $Site->getAttribute('quiqqer.settings.news.max'),
     'itemtype' => "https://schema.org/ItemList",
     'child-itemtype' => "https://schema.org/NewsArticle",
     'display' => $Site->getAttribute('quiqqer.settings.news.template'),
+    'filter' => $Site->getAttribute('quiqqer.settings.news.filter'),
+    'tags' => $Site->getAttribute('quiqqer.settings.news.tags'),
     'parentInputList' => false
 ]);
 

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <events>
-    <event on="onSiteCreateChild" fire="\QUI\News\NewsList::onChildCreate"/>
     <event on="onSiteSaveBefore" fire="\QUI\News\NewsList::onSiteSaveBefore"/>
 </events>

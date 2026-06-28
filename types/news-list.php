@@ -45,7 +45,9 @@ $ChildrenList = new QUI\Controls\ChildrenList([
     'display' => $Site->getAttribute('quiqqer.settings.news.template'),
     'filter' => $Site->getAttribute('quiqqer.settings.news.filter'),
     'tags' => $Site->getAttribute('quiqqer.settings.news.tags'),
-    'parentInputList' => false
+    'parentInputList' => false,
+    'pinnedAttribute' => 'quiqqer.settings.news.pinned',
+    'pinnedOrder' => 'release_from DESC'
 ]);
 
 $ChildrenList->addEvent('onMetaList', function (

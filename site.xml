@@ -203,6 +203,7 @@
             <attributes>
                 <attribute>quiqqer.settings.news.entry.dateAndCreator</attribute>
                 <attribute>quiqqer.settings.news.entry.hideMore</attribute>
+                <attribute default="0">quiqqer.settings.news.pinned</attribute>
                 <attribute>quiqqer.settings.news.guestAuthor.enable</attribute>
                 <attribute>quiqqer.settings.news.guestAuthor.quiqqerUser</attribute>
                 <attribute>quiqqer.settings.news.guestAuthor.name</attribute>
@@ -245,6 +246,15 @@
                                         var="quiqqer.settings.news.entry.dateAndCreator.hide"/>
                             </option>
                         </select>
+
+                        <input conf="quiqqer.settings.news.pinned" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.settings.news.pinned" />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="quiqqer.settings.news.pinned.description" />
+                            </description>
+                        </input>
 
                     </settings>
                 </category>
@@ -309,6 +319,7 @@
                 <attribute>quiqqer.news.settings.guestAuthor.quiqqerUser</attribute>
                 <attribute>quiqqer.news.settings.guestAuthor.name</attribute>
                 <attribute>quiqqer.news.settings.guestAuthor.avatar</attribute>
+                <attribute default="0">quiqqer.settings.news.pinned</attribute>
             </attributes>
 
             <settings>
@@ -362,6 +373,15 @@
                                 <locale group="quiqqer/news" var="quiqqer.news.settings.meta.visibility.hide" />
                             </option>
                         </select>
+
+                        <input conf="quiqqer.settings.news.pinned" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.settings.news.pinned" />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="quiqqer.settings.news.pinned.description" />
+                            </description>
+                        </input>
                     </settings>
                 </category>
 

@@ -149,6 +149,14 @@
             <de><![CDATA[Ausgeblendet]]></de>
             <en><![CDATA[Hide]]></en>
         </locale>
+        <locale name="quiqqer.settings.news.pinned">
+            <de><![CDATA[Angeheftet]]></de>
+            <en><![CDATA[Pinned]]></en>
+        </locale>
+        <locale name="quiqqer.settings.news.pinned.description">
+            <de><![CDATA[Angeheftete Einträge werden in News-Listen vor normalen Einträgen angezeigt.]]></de>
+            <en><![CDATA[Pinned entries are displayed before regular entries in news lists.]]></en>
+        </locale>
 
         <locale name="quiqqer.news.article.settings.title">
             <de><![CDATA[News-Artikel Einstellungen]]></de>

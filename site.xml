@@ -27,7 +27,7 @@
                 <attribute>quiqqer.settings.news.cards.columnsTablet</attribute>
                 <attribute default="1">quiqqer.settings.news.cards.columnsMobile</attribute>
                 <attribute default="cover">quiqqer.settings.news.cards.imageFit</attribute>
-                <attribute default="1/1">quiqqer.settings.news.cards.aspectRatio</attribute>
+                <attribute default="3/2">quiqqer.settings.news.cards.aspectRatio</attribute>
                 <attribute default="normal">quiqqer.settings.news.cards.gap</attribute>
 
                 <!-- media list template (template = mediaList) -->

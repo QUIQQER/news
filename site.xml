@@ -21,6 +21,19 @@
                 <attribute default="disabled">quiqqer.settings.news.filter</attribute>
                 <attribute>quiqqer.settings.news.tags</attribute>
 
+                <!-- card template (template = cards) -->
+                <attribute default="standard">quiqqer.settings.news.cards.layout</attribute>
+                <attribute default="3">quiqqer.settings.news.cards.columns</attribute>
+                <attribute>quiqqer.settings.news.cards.columnsTablet</attribute>
+                <attribute default="1">quiqqer.settings.news.cards.columnsMobile</attribute>
+                <attribute default="cover">quiqqer.settings.news.cards.imageFit</attribute>
+                <attribute default="3/2">quiqqer.settings.news.cards.aspectRatio</attribute>
+                <attribute default="normal">quiqqer.settings.news.cards.gap</attribute>
+
+                <!-- media list template (template = mediaList) -->
+                <attribute default="left">quiqqer.settings.news.media.imagePosition</attribute>
+                <attribute default="normal">quiqqer.settings.news.media.imageWidth</attribute>
+
                 <!-- default type / layout for new child sites -->
                 <attribute default="quiqqer/news:types/news-article">quiqqer.settings.children.type</attribute>
                 <attribute>quiqqer.settings.children.layout</attribute>
@@ -35,10 +48,17 @@
                             <locale group="quiqqer/news" var="quiqqer.news.list.settings.title" />
                         </title>
 
-                        <select conf="quiqqer.settings.news.template">
+                        <select conf="quiqqer.settings.news.template"
+                                data-qui="package/quiqqer/core/bin/QUI/controls/settings/Dependency">
                             <text>
                                 <locale group="quiqqer/news" var="list.template" />
                             </text>
+                            <option value="cards">
+                                <locale group="quiqqer/sitetypes" var="list.template.cards"/>
+                            </option>
+                            <option value="mediaList">
+                                <locale group="quiqqer/sitetypes" var="list.template.mediaList"/>
+                            </option>
                             <option value="cardRows">
                                 <locale group="quiqqer/sitetypes" var="list.template.cardRows"/>
                             </option>
@@ -77,6 +97,164 @@
                             </option>
                             <option value="authorTop">
                                 <locale group="quiqqer/sitetypes" var="list.template.authorTop" />
+                            </option>
+                        </select>
+
+                        <select conf="quiqqer.settings.news.cards.layout"
+                                data-dependency="quiqqer.settings.news.template"
+                                data-dependency-options="cards">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.layout"/>
+                            </text>
+                            <option value="standard">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.layout.standard"/>
+                            </option>
+                        </select>
+
+                        <select conf="quiqqer.settings.news.cards.columns"
+                                data-dependency="quiqqer.settings.news.template"
+                                data-dependency-options="cards">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.columns"/>
+                            </text>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+
+                        <select conf="quiqqer.settings.news.cards.columnsTablet"
+                                data-dependency="quiqqer.settings.news.template"
+                                data-dependency-options="cards">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.columnsTablet"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.columnsTablet.desc"/>
+                            </description>
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+
+                        <select conf="quiqqer.settings.news.cards.columnsMobile"
+                                data-dependency="quiqqer.settings.news.template"
+                                data-dependency-options="cards">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.columnsMobile"/>
+                            </text>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+
+                        <select conf="quiqqer.settings.news.cards.imageFit"
+                                data-dependency="quiqqer.settings.news.template"
+                                data-dependency-options="cards,mediaList">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.imageFit"/>
+                            </text>
+                            <option value="cover">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.imageFit.cover"/>
+                            </option>
+                            <option value="contain">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.imageFit.contain"/>
+                            </option>
+                        </select>
+
+                        <select conf="quiqqer.settings.news.cards.aspectRatio"
+                                data-dependency="quiqqer.settings.news.template"
+                                data-dependency-options="cards,mediaList">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.aspectRatio"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.aspectRatio.desc"/>
+                            </description>
+                            <option value="auto">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.aspectRatio.auto"/>
+                            </option>
+                            <option value="1/1">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.aspectRatio.1-1"/>
+                            </option>
+                            <option value="5/4">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.aspectRatio.5-4"/>
+                            </option>
+                            <option value="4/3">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.aspectRatio.4-3"/>
+                            </option>
+                            <option value="3/2">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.aspectRatio.3-2"/>
+                            </option>
+                            <option value="16/9">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.aspectRatio.16-9"/>
+                            </option>
+                        </select>
+
+                        <select conf="quiqqer.settings.news.cards.gap"
+                                data-dependency="quiqqer.settings.news.template"
+                                data-dependency-options="cards,mediaList,featuredCards">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.gap"/>
+                            </text>
+                            <option value="none">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.gap.none"/>
+                            </option>
+                            <option value="xs">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.gap.xs"/>
+                            </option>
+                            <option value="small">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.gap.small"/>
+                            </option>
+                            <option value="normal">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.gap.normal"/>
+                            </option>
+                            <option value="large">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.gap.large"/>
+                            </option>
+                            <option value="extraLarge">
+                                <locale group="quiqqer/sitetypes" var="list.settings.cards.gap.extraLarge"/>
+                            </option>
+                        </select>
+
+                        <select conf="quiqqer.settings.news.media.imagePosition"
+                                data-dependency="quiqqer.settings.news.template"
+                                data-dependency-options="mediaList">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="list.settings.media.imagePosition"/>
+                            </text>
+                            <option value="left">
+                                <locale group="quiqqer/sitetypes" var="list.settings.media.imagePosition.left"/>
+                            </option>
+                            <option value="right">
+                                <locale group="quiqqer/sitetypes" var="list.settings.media.imagePosition.right"/>
+                            </option>
+                            <option value="alternate">
+                                <locale group="quiqqer/sitetypes" var="list.settings.media.imagePosition.alternate"/>
+                            </option>
+                        </select>
+
+                        <select conf="quiqqer.settings.news.media.imageWidth"
+                                data-dependency="quiqqer.settings.news.template"
+                                data-dependency-options="mediaList">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="list.settings.media.imageWidth"/>
+                            </text>
+                            <option value="small">
+                                <locale group="quiqqer/sitetypes" var="list.settings.media.imageWidth.small"/>
+                            </option>
+                            <option value="normal">
+                                <locale group="quiqqer/sitetypes" var="list.settings.media.imageWidth.normal"/>
+                            </option>
+                            <option value="large">
+                                <locale group="quiqqer/sitetypes" var="list.settings.media.imageWidth.large"/>
                             </option>
                         </select>
 
@@ -203,6 +381,7 @@
             <attributes>
                 <attribute>quiqqer.settings.news.entry.dateAndCreator</attribute>
                 <attribute>quiqqer.settings.news.entry.hideMore</attribute>
+                <attribute default="0">quiqqer.settings.news.pinned</attribute>
                 <attribute>quiqqer.settings.news.guestAuthor.enable</attribute>
                 <attribute>quiqqer.settings.news.guestAuthor.quiqqerUser</attribute>
                 <attribute>quiqqer.settings.news.guestAuthor.name</attribute>
@@ -245,6 +424,15 @@
                                         var="quiqqer.settings.news.entry.dateAndCreator.hide"/>
                             </option>
                         </select>
+
+                        <input conf="quiqqer.settings.news.pinned" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.settings.news.pinned" />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="quiqqer.settings.news.pinned.description" />
+                            </description>
+                        </input>
 
                     </settings>
                 </category>
@@ -309,6 +497,7 @@
                 <attribute>quiqqer.news.settings.guestAuthor.quiqqerUser</attribute>
                 <attribute>quiqqer.news.settings.guestAuthor.name</attribute>
                 <attribute>quiqqer.news.settings.guestAuthor.avatar</attribute>
+                <attribute default="0">quiqqer.settings.news.pinned</attribute>
             </attributes>
 
             <settings>
@@ -362,6 +551,15 @@
                                 <locale group="quiqqer/news" var="quiqqer.news.settings.meta.visibility.hide" />
                             </option>
                         </select>
+
+                        <input conf="quiqqer.settings.news.pinned" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/news" var="quiqqer.settings.news.pinned" />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/news" var="quiqqer.settings.news.pinned.description" />
+                            </description>
+                        </input>
                     </settings>
                 </category>
 

@@ -2,20 +2,20 @@
     "name": "quiqqer/news",
     "type": "quiqqer-module",
     "description": "News / News Functionality for the QUIQQER system",
-    "license": [
-        "GPL-3.0+",
-        "PCSG QL-1.0"
-    ],
+    "homepage": "https://www.quiqqer.com",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
-            "name": "Henning Leutz",
-            "email": "leutz@pcsg.de",
-            "homepage": "http://www.pcsg.de",
-            "role": "Developer"
+            "name": "PCSG - Computer & Internet Service OHG",
+            "email": "info@quiqqer.com",
+            "homepage": "https://www.quiqqer.com",
+            "role": "Maintainer"
         }
     ],
     "support": {
-        "email": "support@pcsg.de"
+        "email": "support@pcsg.de",
+        "issues": "https://dev.quiqqer.com/quiqqer/news/issues",
+        "source": "https://dev.quiqqer.com/quiqqer/news"
     },
     "require": {
         "php": "^8.2",

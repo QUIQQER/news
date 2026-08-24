@@ -8,6 +8,16 @@
             <locale group="quiqqer/news" var="package.description"/>
         </description>
 
+        <capabilities schemaVersion="1">
+            <capability id="content.news-publishing">
+                <title>News publishing</title>
+                <description>
+                    Provides configurable news lists and articles with publication dates, pinned ordering, tag and text
+                    filtering, author and guest-author attribution, article navigation, and structured NewsArticle data.
+                </description>
+            </capability>
+        </capabilities>
+
         <image src="URL_OPT_DIR/quiqqer/news/bin/images/Logo.jpg"/>
 
         <preview>

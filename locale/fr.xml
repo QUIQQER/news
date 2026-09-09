@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <groups name="quiqqer/news" datatype="php,js">
+        <locale name="package.title">
+<fr><![CDATA[QUIQQER - Actualités]]></fr>
+        </locale>
+        <locale name="package.description" html="true">
+<fr><![CDATA[Le module d’actualités ajoute à QUIQQER un système de création et de présentation des actualités. Il propose deux types de page avec de nombreuses options : « Liste d’actualités », pour présenter les actualités de différentes façons, et « Entrée d’actualité », pour rédiger leur contenu.]]></fr>
+        </locale>
+        <locale name="quiqqer/news:types/news-entry.description">
+<fr><![CDATA[Créez une page pour rédiger une entrée d’actualité. Les entrées sont affichées dans la liste d’actualités parente.]]></fr>
+        </locale>
+        <locale name="quiqqer/news:types/news-entry.title">
+<fr><![CDATA[QUIQQER - Entrée d’actualité]]></fr>
+        </locale>
+        <locale name="quiqqer/news:types/news-list.description">
+<fr><![CDATA[Créez une liste d’actualités. Toutes ses sous-pages y seront répertoriées.]]></fr>
+        </locale>
+        <locale name="quiqqer/news:types/news-list.title">
+<fr><![CDATA[QUIQQER - Liste d’actualités]]></fr>
+        </locale>
+    </groups>
+
+    <groups name="quiqqer/news" datatype="php">
+<!-- site typ news -->
+        <locale name="admin.types.news.list">
+<fr><![CDATA[Liste d’actualités]]></fr>
+        </locale>
+        <locale name="admin.types.news.list.desc">
+<fr><![CDATA[Liste d’actualités]]></fr>
+        </locale>
+        <locale name="admin.types.news.entry">
+<fr><![CDATA[Entrée d’actualité]]></fr>
+        </locale>
+        <locale name="admin.types.news.entry.desc">
+<fr><![CDATA[Actualités]]></fr>
+        </locale>
+        <locale name="admin.types.news.article">
+<fr><![CDATA[Article d’actualité]]></fr>
+        </locale>
+        <locale name="admin.types.news.article.desc">
+<fr><![CDATA[Type de page d’article pour les actualités éditoriales détaillées]]></fr>
+        </locale>
+
+<!-- Site list settings -->
+        <locale name="quiqqer.news.list.settings.title">
+<fr><![CDATA[Paramètres de la liste d’actualités]]></fr>
+        </locale>
+
+<!-- defaults for new child sites -->
+        <locale name="quiqqer.news.list.settings.childrenDefaults.title">
+<fr><![CDATA[Valeurs par défaut des nouvelles sous-pages]]></fr>
+        </locale>
+        <locale name="quiqqer.news.list.settings.childrenDefaults.type">
+<fr><![CDATA[Type de page par défaut]]></fr>
+        </locale>
+        <locale name="quiqqer.news.list.settings.childrenDefaults.type.desc">
+<fr><![CDATA[Type de page présélectionné lors de la création d’une sous-page. Si ce champ est vide, la valeur par défaut du type de page est utilisée.]]></fr>
+        </locale>
+        <locale name="quiqqer.news.list.settings.childrenDefaults.layout">
+<fr><![CDATA[Mise en page par défaut]]></fr>
+        </locale>
+        <locale name="quiqqer.news.list.settings.childrenDefaults.layout.desc">
+<fr><![CDATA[Mise en page présélectionnée lors de la création d’une sous-page. Si ce champ est vide, la mise en page par défaut est utilisée.]]></fr>
+        </locale>
+
+<!-- max site -->
+        <locale name="quiqqer.news.list.settings.max">
+<fr><![CDATA[Nombre d’actualités par page]]></fr>
+        </locale>
+
+<!-- News template -->
+        <locale name="list.template">
+<fr><![CDATA[Mise en page]]></fr>
+        </locale>
+
+<!-- show author -->
+        <locale name="list.showCreator">
+<fr><![CDATA[Afficher l’auteur]]></fr>
+        </locale>
+
+<!-- show date -->
+        <locale name="list.showTime">
+<fr><![CDATA[Afficher la date]]></fr>
+        </locale>
+
+<!-- Site entry settings -->
+        <locale name="quiqqer.news.entry.settings.title">
+<fr><![CDATA[Paramètres de l’entrée d’actualité]]></fr>
+        </locale>
+        <locale name="quiqqer.settings.news.entry.dateAndCreator">
+<fr><![CDATA[Auteur et date]]></fr>
+        </locale>
+        <locale name="quiqqer.settings.news.entry.dateAndCreator.default">
+<fr><![CDATA[Utiliser les paramètres par défaut]]></fr>
+        </locale>
+        <locale name="quiqqer.settings.news.entry.dateAndCreator.showAll">
+<fr><![CDATA[Afficher l’auteur et la date]]></fr>
+        </locale>
+        <locale name="quiqqer.settings.news.entry.dateAndCreator.showCreator">
+<fr><![CDATA[Afficher uniquement l’auteur]]></fr>
+        </locale>
+        <locale name="quiqqer.settings.news.entry.dateAndCreator.showDate">
+<fr><![CDATA[Afficher uniquement la date]]></fr>
+        </locale>
+        <locale name="quiqqer.settings.news.entry.dateAndCreator.hide">
+<fr><![CDATA[Masquer]]></fr>
+        </locale>
+        <locale name="quiqqer.settings.news.pinned">
+<fr><![CDATA[Épinglée]]></fr>
+        </locale>
+        <locale name="quiqqer.settings.news.pinned.description">
+<fr><![CDATA[Les entrées épinglées s’affichent avant les autres dans les listes d’actualités.]]></fr>
+        </locale>
+
+        <locale name="quiqqer.news.article.settings.title">
+<fr><![CDATA[Paramètres de l’article d’actualité]]></fr>
+        </locale>
+
+        <locale name="quiqqer.news.settings.newsArticle.layout">
+<fr><![CDATA[Mise en page]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.newsArticle.layout.projectDefault">
+<fr><![CDATA[Paramètre par défaut du projet]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.newsArticle.layout.default">
+<fr><![CDATA[Par défaut]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.newsArticle.layout.imageFirst">
+<fr><![CDATA[Image d’en-tête en premier]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.newsArticle.headerImage">
+<fr><![CDATA[Image d’en-tête]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.newsArticle.headerImage.description">
+<fr><![CDATA[Image d’en-tête facultative. Si ce champ est vide, l’image de la page est utilisée.]]></fr>
+        </locale>
+
+        <locale name="quiqqer.news.settings.meta.visibility">
+<fr><![CDATA[Auteur et date]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.meta.visibility.default">
+<fr><![CDATA[Par défaut]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.meta.visibility.showAll">
+<fr><![CDATA[Afficher l’auteur et la date]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.meta.visibility.showAuthor">
+<fr><![CDATA[Afficher uniquement l’auteur]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.meta.visibility.showDate">
+<fr><![CDATA[Afficher uniquement la date]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.meta.visibility.hide">
+<fr><![CDATA[Masquer]]></fr>
+        </locale>
+
+        <locale name="settings.title">
+<fr><![CDATA[Actualités]]></fr>
+        </locale>
+
+        <locale name="settings.further_news.title">
+<fr><![CDATA[Paramètres des autres actualités]]></fr>
+        </locale>
+
+        <locale name="settings.further_news.amount.text">
+<fr><![CDATA[Nombre d’autres actualités]]></fr>
+        </locale>
+
+        <locale name="settings.further_news.amount.description">
+<fr><![CDATA[Nombre d’actualités précédant et suivant l’actualité en cours, affichées en bas de page.]]></fr>
+        </locale>
+
+        <locale name="settings.further_news.show_date.text">
+<fr><![CDATA[Afficher la date avant le titre de l’actualité]]></fr>
+        </locale>
+
+        <locale name="settings.further_news.show_time.text">
+<fr><![CDATA[Afficher l’heure avant le titre de l’actualité]]></fr>
+        </locale>
+
+        <locale name="list.news.by">
+<fr><![CDATA[par]]></fr>
+        </locale>
+        <locale name="list.news.on">
+<fr><![CDATA[le]]></fr>
+        </locale>
+        <locale name="list.more">
+<fr><![CDATA[plus]]></fr>
+        </locale>
+        <locale name="entry.news.by">
+<fr><![CDATA[par]]></fr>
+        </locale>
+        <locale name="entry.news.on">
+<fr><![CDATA[le]]></fr>
+        </locale>
+        <locale name="entry.news.prev">
+<fr><![CDATA[actualité précédente]]></fr>
+        </locale>
+        <locale name="entry.news.next">
+<fr><![CDATA[actualité suivante]]></fr>
+        </locale>
+
+        <locale name="news.settings.title">
+<fr><![CDATA[Entrées d’actualité]]></fr>
+        </locale>
+
+        <locale name="news.settings.entries.more.title">
+<fr><![CDATA[Autres entrées d’actualité]]></fr>
+        </locale>
+
+        <locale name="news.settings.entries.more.disabled.text">
+<fr><![CDATA[Ne pas afficher d’autres entrées d’actualité]]></fr>
+        </locale>
+        <locale name="news.settings.entries.more.disabled.description">
+<fr><![CDATA[La navigation vers d’autres entrées d’actualité n’est pas affichée sous cette entrée.]]></fr>
+        </locale>
+
+        <locale name="news.settings.article.title">
+<fr><![CDATA[Article d’actualité]]></fr>
+        </locale>
+        <locale name="news.settings.article.defaultLayout.text">
+<fr><![CDATA[Mise en page par défaut]]></fr>
+        </locale>
+        <locale name="news.settings.article.defaultLayout.description">
+<fr><![CDATA[Définit la mise en page par défaut des articles d’actualité lorsqu’aucune n’est sélectionnée sur la page.]]></fr>
+        </locale>
+        <locale name="news.settings.article.showMoreNews.text">
+<fr><![CDATA[Afficher d’autres entrées d’actualité]]></fr>
+        </locale>
+        <locale name="news.settings.article.showMoreNews.description">
+<fr><![CDATA[Affiche ou masque par défaut la navigation vers d’autres entrées sous les articles d’actualité.]]></fr>
+        </locale>
+
+        <locale name="news.settings.article.layout.default.title">
+<fr><![CDATA[Article d’actualité : mise en page par défaut]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.default.option">
+<fr><![CDATA[Par défaut]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.imageFirst.title">
+<fr><![CDATA[Article d’actualité : image d’en-tête en premier]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.imageFirst.option">
+<fr><![CDATA[Image d’en-tête en premier]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.sectionGap.text">
+<fr><![CDATA[Espacement entre les sections]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.sectionGap.description">
+<fr><![CDATA[Contrôle l’espacement vertical entre les sections principales de l’article d’actualité.]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.titleSize.text">
+<fr><![CDATA[Taille de police du titre]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.titleSize.description">
+<fr><![CDATA[Définit la taille du titre principal de l’article d’actualité.]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.centerHeader.text">
+<fr><![CDATA[Centrer le titre et la description]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.centerHeader.description">
+<fr><![CDATA[Centre le titre, les catégories et la description courte dans l’en-tête de la mise en page par défaut.]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.headerImageMaxHeight.text">
+<fr><![CDATA[Hauteur maximale de l’image d’en-tête (px)]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.headerImageMaxHeight.description">
+<fr><![CDATA[Limite la hauteur de l’image d’en-tête. Si ce champ est vide, l’affichage par défaut est utilisé.]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.imageFit.text">
+<fr><![CDATA[Ajustement de l’image d’en-tête]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.imageFit.description">
+<fr><![CDATA[Détermine l’affichage de l’image d’en-tête dans la largeur et la hauteur disponibles.]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.imageFit.cover">
+<fr><![CDATA[Remplir la zone et recadrer l’image (cover)]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.imageFit.contain">
+<fr><![CDATA[Afficher l’image entière sans recadrage (contain)]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.imageWidthMode.text">
+<fr><![CDATA[Largeur de l’image d’en-tête]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.imageWidthMode.description">
+<fr><![CDATA[Définit la largeur de la zone de l’image d’en-tête.]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.imageWidthMode.auto">
+<fr><![CDATA[Automatique]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.imageWidthMode.content">
+<fr><![CDATA[Largeur du contenu de la page]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.imageWidthMode.custom">
+<fr><![CDATA[Largeur définie]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.headerImageMaxWidth.text">
+<fr><![CDATA[Largeur maximale de l’image d’en-tête (px)]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.headerImageMaxWidth.description">
+<fr><![CDATA[Utilisé uniquement si « Largeur définie » est sélectionné pour la largeur de l’image.]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.headerImageBlurBackground.text">
+<fr><![CDATA[Créer un fond coloré à partir de l’image d’en-tête]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.headerImageBlurBackground.description">
+<fr><![CDATA[Ajoute une version floutée de l’image d’en-tête en arrière-plan pour créer un fond coloré assorti derrière l’image principale.]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.headerBackground.text">
+<fr><![CDATA[Couleur de fond derrière l’image d’en-tête]]></fr>
+        </locale>
+        <locale name="news.settings.article.layout.headerBackground.description">
+<fr><![CDATA[Visible lorsqu’aucun fond coloré n’est généré à partir de l’image d’en-tête.]]></fr>
+        </locale>
+        <locale name="news.settings.article.size.small">
+<fr><![CDATA[Petit]]></fr>
+        </locale>
+        <locale name="news.settings.article.size.normal">
+<fr><![CDATA[Normal (par défaut)]]></fr>
+        </locale>
+        <locale name="news.settings.article.size.large">
+<fr><![CDATA[Grand]]></fr>
+        </locale>
+        <locale name="news.settings.article.size.extraLarge">
+<fr><![CDATA[Très grand]]></fr>
+        </locale>
+        <locale name="news.settings.article.scale.muchSmaller">
+<fr><![CDATA[Beaucoup plus petit]]></fr>
+        </locale>
+        <locale name="news.settings.article.scale.smaller">
+<fr><![CDATA[Plus petit]]></fr>
+        </locale>
+        <locale name="news.settings.article.scale.normal">
+<fr><![CDATA[Normal (par défaut)]]></fr>
+        </locale>
+        <locale name="news.settings.article.scale.larger">
+<fr><![CDATA[Plus grand]]></fr>
+        </locale>
+        <locale name="news.settings.article.scale.muchLarger">
+<fr><![CDATA[Beaucoup plus grand]]></fr>
+        </locale>
+
+        <locale name="news.settings.entry.title">
+<fr><![CDATA[Entrée d’actualité]]></fr>
+        </locale>
+        <locale name="news.settings.entry.showCreator.text">
+<fr><![CDATA[Afficher l’auteur]]></fr>
+        </locale>
+        <locale name="news.settings.entry.showDate.text">
+<fr><![CDATA[Afficher la date]]></fr>
+        </locale>
+        <locale name="news.settings.entry.showTitle.text">
+<fr><![CDATA[Afficher le titre]]></fr>
+        </locale>
+        <locale name="news.settings.entry.showDescription.text">
+<fr><![CDATA[Afficher la description courte]]></fr>
+        </locale>
+
+        <locale name="news.settings.entries.more.amount.text">
+<fr><![CDATA[Nombre d’autres entrées d’actualité]]></fr>
+        </locale>
+        <locale name="news.settings.entries.more.amount.description">
+<fr><![CDATA[Nombre d’entrées précédant et suivant l’entrée en cours, affichées en bas de page.]]></fr>
+        </locale>
+
+        <locale name="news.settings.entries.more.show_creator.text">
+<fr><![CDATA[Afficher l’auteur]]></fr>
+        </locale>
+
+        <locale name="news.settings.entries.more.show_date.text">
+<fr><![CDATA[Afficher la date avant l’entrée d’actualité]]></fr>
+        </locale>
+
+        <locale name="news.settings.entries.more.show_time.text">
+<fr><![CDATA[Afficher l’heure avant l’entrée d’actualité]]></fr>
+        </locale>
+
+        <locale name="entry.news.nav.title">
+<fr><![CDATA[Autres actualités :]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.more.title">
+<fr><![CDATA[Autres actualités]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.more.enabled">
+<fr><![CDATA[Afficher d’autres actualités]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.more.amount">
+<fr><![CDATA[Nombre d’autres actualités]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.more.amount.description">
+<fr><![CDATA[Nombre d’actualités précédant et suivant l’article en cours à afficher.]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.more.showDate">
+<fr><![CDATA[Afficher la date]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.more.showTime">
+<fr><![CDATA[Afficher l’heure]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.more.template">
+<fr><![CDATA[Modèle]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.more.template.default">
+<fr><![CDATA[Par défaut]]></fr>
+        </locale>
+
+        <locale name="quiqqer.news.settings.guestAuthor.title">
+<fr><![CDATA[Actualités : auteur invité]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.guestAuthor.enable">
+<fr><![CDATA[Activer l’auteur invité]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.guestAuthor.enable.description">
+<fr><![CDATA[Si cette option est activée, l’auteur invité est affiché comme auteur de l’actualité.]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.guestAuthor.quiqqerUser">
+<fr><![CDATA[Utilisateur]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.guestAuthor.quiqqerUser.description">
+<fr><![CDATA[Si aucun utilisateur n’existe dans le système, remplissez le champ « Nom » ci-dessous.]]></fr>
+        </locale>
+        <locale name="quiqqer.news.settings.guestAuthor.name">
+<fr><![CDATA[Nom]]></fr>
+        </locale>
+        <locale name="sheet.first.page">
+<fr><![CDATA[Première page]]></fr>
+        </locale>
+        <locale name="sheet.last.page">
+<fr><![CDATA[Dernière page]]></fr>
+        </locale>
+        <locale name="sheet.back">
+<fr><![CDATA[précédent]]></fr>
+        </locale>
+        <locale name="sheet.next">
+<fr><![CDATA[suivant]]></fr>
+        </locale>
+        <locale name="sheet.mobile.option">
+<fr><![CDATA[Page [from] sur [max]]]></fr>
+        </locale>
+
+<!-- guest author -->
+        <locale name="site.settings.entry.guestAuthor.title">
+<fr><![CDATA[Actualités : auteur invité]]></fr>
+        </locale>
+        <locale name="site.settings.entry.guestAuthor.enable">
+<fr><![CDATA[Activer l’auteur invité]]></fr>
+        </locale>
+        <locale name="site.settings.entry.guestAuthor.enable.description">
+<fr><![CDATA[Si cette option est activée, l’auteur invité est affiché comme auteur de l’entrée d’actualité.]]></fr>
+        </locale>
+        <locale name="site.settings.entry.guestAuthor.quiqqerUser">
+<fr><![CDATA[Utilisateur]]></fr>
+        </locale>
+        <locale name="site.settings.entry.guestAuthor.quiqqerUser.description">
+<fr><![CDATA[Si aucun utilisateur n’existe dans le système, remplissez le champ « Nom » ci-dessous.]]></fr>
+        </locale>
+        <locale name="site.settings.entry.guestAuthor.name">
+<fr><![CDATA[Nom]]></fr>
+        </locale>
+        <locale name="site.settings.entry.guestAuthor.avatar">
+<fr><![CDATA[Image de l’utilisateur]]></fr>
+        </locale>
+    </groups>
+</locales>

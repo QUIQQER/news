@@ -8,8 +8,7 @@
  * @var QUI\Template $Template
  */
 
-use QUI\Projects\Media\Image;
-use QUI\Projects\Media\Utils as MediaUtils;
+use QUI\News\Utils\EntryData;
 
 $a = $Project->getConfig('news.settings.entry.showTitle');
 // default
@@ -54,17 +53,6 @@ if (!$showCreator && !$showDate) {
 }
 
 /**
- * Meta
- */
-$MetaList = new QUI\Controls\Utils\MetaList();
-$MetaList->add('type', 'NewsArticle');
-$MetaList->add('headline', $Site->getAttribute('title'));
-$MetaList->add('description', $Site->getAttribute('short'));
-$MetaList->add('datePublished', $Site->getAttribute('release_from'));
-$MetaList->add('dateModified', $Site->getAttribute('e_date'));
-$MetaList->add('mainEntityOfPage', $Site->getUrlRewrittenWithHost());
-
-/**
  * Author
  */
 $quiqqerUser = $Site->getAttribute('c_user');
@@ -92,7 +80,7 @@ if ($Site->getAttribute('quiqqer.settings.news.guestAuthor.enable')) {
 if ($quiqqerUser) {
     try {
         $User = QUI::getUsers()->get($quiqqerUser);
-        $MetaList->add('author', $User->getName());
+        $userName = $User->getName();
         $Engine->assign('author', $User->getName());
     } catch (QUI\Exception $Exception) {
         QUI\System\Log::addInfo($Exception->getMessage(), [
@@ -103,49 +91,30 @@ if ($quiqqerUser) {
         $Engine->assign('author', null);
     }
 } else {
-    $MetaList->add('author', $userName);
     $Engine->assign('author', $userName);
 }
 
-// publisher
-$Publisher = new QUI\Controls\Utils\MetaList\Publisher();
-$Publisher->importFromProject($Site->getProject());
-$MetaList->add('publisher', $Publisher);
+try {
+    $ArticleJsonLd = EntryData::createJsonLd($Site, $userName);
+    $PageJsonLd = $Template->getJsonLd();
+    $webPageId = $PageJsonLd->get('@id');
 
-// image
-$image = $Site->getAttribute('image_site');
-$imageAbsolutePath = '';
-$host = QUI::getRequest()->getHost();
-$scheme = QUI::getRequest()->getScheme();
-
-if (\strpos($image, 'fa-') !== false) {
-    $image = '';
-}
-
-if (MediaUtils::isMediaUrl($image)) {
-    try {
-        $Image = MediaUtils::getImageByUrl($image);
-        // structured data needs absolute urls for images
-        $imageAbsolutePath = $scheme . '://' . $host . $Image->getSizeCacheUrl();
-    } catch (QUI\Exception $Exception) {
+    if (!empty($webPageId)) {
+        $ArticleJsonLd->set('mainEntityOfPage', ['@id' => $webPageId]);
     }
-}
 
-// use default
-if (empty($imageAbsolutePath)) {
-    try {
-        $Placeholder = $Site->getProject()->getMedia()->getPlaceholderImage();
+    $publisher = $ArticleJsonLd->getJsonLdData()['publisher'] ?? [];
+    $pagePublisher = $PageJsonLd->get('publisher');
 
-        if ($Placeholder instanceof Image) {
-            // structured data needs absolute urls for images
-            $imageAbsolutePath = $scheme . '://' . $host . $Placeholder->getSizeCacheUrl();
-        }
-    } catch (QUI\Exception $Exception) {
+    if (is_array($pagePublisher) && !empty($pagePublisher['@id'])) {
+        $publisher['@id'] = $pagePublisher['@id'];
+        $ArticleJsonLd->set('publisher', $publisher);
     }
-}
 
-if (!empty($imageAbsolutePath)) {
-    $MetaList->add('image', $imageAbsolutePath);
+    $PageJsonLd->set('mainEntity', ['@id' => $ArticleJsonLd->get('@id')]);
+    $PageJsonLd->setJsonLdNode('newsArticle', $ArticleJsonLd->getJsonLdData());
+} catch (QUI\Exception $Exception) {
+    QUI\System\Log::addWarning($Exception->getMessage());
 }
 
 /**
@@ -166,14 +135,6 @@ $Engine->assign([
     'showFurtherNewsTime' => $moreEntriesShowTime,
     'previousSiblings' => $previousSiblings,
     'nextSiblings' => $nextSiblings,
-    'MetaList' => $MetaList,
     'showTitle' => $Project->getConfig('news.settings.entry.showTitle'),
     'showDescription' => $Project->getConfig('news.settings.entry.showDescription')
 ]);
-
-// json schema
-try {
-    $Template->extendHeader($MetaList->getJsonLdSchema());
-} catch (\QUI\Exception $e) {
-    QUI\System\Log::addWarning($e->getMessage());
-}

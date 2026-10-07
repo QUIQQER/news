@@ -6,9 +6,7 @@
 {/if}
 
 <article class="quiqqer-news-entry quiqqer-news-entry content-body"
-         itemscope itemtype="https://schema.org/NewsArticle"
 >
-    {$MetaList->create()}
 
     {if $showTitle and $Site->getAttribute('title')}
         <h1 class="quiqqer-news-entry__title">{$Site->getAttribute('title')}</h1>
@@ -18,7 +16,7 @@
     <section class="quiqqer-news-entry__meta">
         {if $author && $showCreator}
             {t}quiqqer/news entry.news.by{/t}
-            <span class="quiqqer-news-entry__author"  itemprop="author">{$author}</span>
+            <span class="quiqqer-news-entry__author">{$author}</span>
         {/if}
 
         {if $showDate}
@@ -37,7 +35,7 @@
     {/if}
 
     {if $Site->getAttribute('content')}
-    <section class="quiqqer-news-entry__content" itemprop="articleBody">
+    <section class="quiqqer-news-entry__content">
         {$Site->getAttribute('content')}
     </section>
     {/if}

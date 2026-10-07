@@ -5,9 +5,10 @@
  *
  * @var \QUI\Interfaces\Projects\Site $Site
  * @var \QUI\Interfaces\Template\EngineInterface $Engine
+ * @var QUI\Template $Template
  */
 
-use QUI\Projects\Media\Utils as MediaUtils;
+use QUI\News\Utils\EntryData;
 
 if (
     isset($_REQUEST['sheet']) && is_numeric($_REQUEST['sheet']) && (int)$_REQUEST['sheet'] > 1
@@ -21,6 +22,7 @@ if (
  */
 
 $ChildrenList = new QUI\Controls\ChildrenList([
+    'ownJsonLd' => false,
     'showTitle' => false,
     'showContent' => false,
     'showImages' => $Site->getAttribute('quiqqer.settings.news.showImages'),
@@ -65,9 +67,16 @@ $ChildrenList->addEvent('onMetaList', function (
     QUI\Controls\Utils\MetaList $MetaList
 ) {
     $MetaList->add('headline', $Site->getAttribute('title'));
-    $MetaList->add('datePublished', $Site->getAttribute('release_from'));
-    $MetaList->add('dateModified', $Site->getAttribute('e_date'));
-    $MetaList->add('mainEntityOfPage', $Site->getUrlRewritten());
+    $MetaList->add('datePublished', EntryData::getDisplayDate($Site));
+    $dateModified = QUI\Utils\StructuredData::getModificationDate(
+        $Site->getAttribute('c_date'),
+        $Site->getAttribute('e_date')
+    );
+
+    if ($dateModified !== null) {
+        $MetaList->add('dateModified', $dateModified);
+    }
+    $MetaList->add('mainEntityOfPage', $Site->getUrlRewrittenWithHost());
 
     try {
         // author
@@ -83,38 +92,23 @@ $ChildrenList->addEvent('onMetaList', function (
     $Publisher->importFromProject($Site->getProject());
     $MetaList->add('publisher', $Publisher);
 
-    // image
-    $image = $Site->getAttribute('image_site');
-
-    if (\strpos($image, 'fa-') !== false) {
-        $image = '';
-    }
-
-    if (MediaUtils::isMediaUrl($image)) {
-        try {
-            $Image = MediaUtils::getImageByUrl($image);
-            $image = $Image->getSizeCacheUrl();
-        } catch (QUI\Exception $Exception) {
-            QUI\System\Log::writeException($Exception);
-            $image = '';
-        }
-    }
-
-    // use default
-    if (empty($image)) {
-        try {
-            $Placeholder = $Site->getProject()->getMedia()->getPlaceholderImage();
-
-            if ($Placeholder) {
-                $image = $Placeholder->getSizeCacheUrl();
-            }
-        } catch (QUI\Exception $Exception) {
-        }
-    }
-
-    $MetaList->add('image', $image);
+    $MetaList->add('image', EntryData::getAbsoluteImageUrl($Site));
 });
 
+// Prepare the list before the page head; the site type owns the page graph.
+$childrenListHtml = $ChildrenList->create();
+
+try {
+    $ListJsonLd = $ChildrenList->getJsonLd();
+
+    if ($ListJsonLd !== null) {
+        $Template->getJsonLd()->setJsonLdNode('newsList', $ListJsonLd->getJsonLdData());
+    }
+} catch (QUI\Exception $Exception) {
+    QUI\System\Log::addWarning($Exception->getMessage());
+}
+
 $Engine->assign([
+    'childrenListHtml' => $childrenListHtml,
     'ChildrenList' => $ChildrenList
 ]);

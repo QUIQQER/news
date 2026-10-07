@@ -1,10 +1,5 @@
 <article class="quiqqer-news-article quiqqer-news-article--{$layout} qui-content-grid"
-         itemscope itemtype="https://schema.org/NewsArticle"
 >
-    <div class="quiqqer-news-article__schema" aria-hidden="true">
-        {$MetaList->create()}
-    </div>
-
     {if $headerImage}
         <div class="quiqqer-news-article__image quiqqer-news-article__image--surface qui-content-full">
             {if $showHeaderImageBlurBackground}
@@ -23,7 +18,7 @@
     {/if}
 
     <header class="quiqqer-news-article__header qui-content-narrow">
-        <h1 class="quiqqer-news-article__title" itemprop="headline">{$Site->getAttribute('title')}</h1>
+        <h1 class="quiqqer-news-article__title">{$Site->getAttribute('title')}</h1>
 
         {if $tags}
             <ul class="quiqqer-news-article__tags">
@@ -36,7 +31,7 @@
         {if $showMeta}
             <div class="quiqqer-news-article__meta">
                 {if $author && $showAuthor}
-                    <span class="quiqqer-news-article__author" itemprop="author">
+                    <span class="quiqqer-news-article__author">
                         {locale group="quiqqer/news" var="entry.news.by"} {$author}
                     </span>
                 {/if}
@@ -44,7 +39,7 @@
                 {if $showDate}
                     <span class="quiqqer-news-article__date">
                         {locale group="quiqqer/news" var="entry.news.on"}
-                        <time datetime="{$date|date_format:'c'}" itemprop="datePublished">
+                        <time datetime="{$date|date_format:'c'}">
                             {locale_date date=$date}
                         </time>
                     </span>
@@ -53,12 +48,12 @@
         {/if}
 
         {if $Site->getAttribute('short')}
-            <p class="quiqqer-news-article__lead" itemprop="description">{$Site->getAttribute('short')}</p>
+            <p class="quiqqer-news-article__lead">{$Site->getAttribute('short')}</p>
         {/if}
     </header>
 
     {if $Site->getAttribute('content')}
-        <section class="quiqqer-news-article__content qui-content-full qui-content-grid qui-content-grid--narrow" itemprop="articleBody">
+        <section class="quiqqer-news-article__content qui-content-full qui-content-grid qui-content-grid--narrow">
             {$Site->getAttribute('content')}
         </section>
     {/if}

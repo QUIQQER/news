@@ -7,6 +7,8 @@ use QUI\Controls\Utils\MetaList;
 use QUI\Controls\Utils\MetaList\Publisher;
 use QUI\Projects\Media\Image;
 use QUI\Projects\Media\Utils as MediaUtils;
+use QUI\Utils\JsonLd;
+use QUI\Utils\StructuredData;
 
 use function array_reverse;
 use function is_array;
@@ -120,6 +122,14 @@ class EntryData
         $host = QUI::getRequest()->getHost();
         $scheme = QUI::getRequest()->getScheme();
 
+        if (preg_match('#^https?://#i', $image)) {
+            return $image;
+        }
+
+        if (str_starts_with($image, '//')) {
+            return $scheme . ':' . $image;
+        }
+
         if (MediaUtils::isMediaUrl($image)) {
             try {
                 $Image = MediaUtils::getImageByUrl($image);
@@ -127,6 +137,10 @@ class EntryData
                 return $scheme . '://' . $host . $Image->getSizeCacheUrl();
             } catch (QUI\Exception) {
             }
+        }
+
+        if (str_starts_with($image, '/')) {
+            return $scheme . '://' . $host . $image;
         }
 
         try {
@@ -142,36 +156,60 @@ class EntryData
     }
 
     /**
+     * @deprecated Use createJsonLd() for structured data output.
      * @param QUI\Interfaces\Projects\Site $Site
-     * @param string $author
-     * @param string $preferredImage
-     * @return MetaList
      */
     public static function createMetaList($Site, ?string $author = null, string $preferredImage = ''): MetaList
     {
         $MetaList = new MetaList();
-        $MetaList->add('type', 'NewsArticle');
-        $MetaList->add('headline', $Site->getAttribute('title'));
-        $MetaList->add('description', $Site->getAttribute('short'));
-        $MetaList->add('datePublished', self::getDisplayDate($Site));
-        $MetaList->add('dateModified', $Site->getAttribute('e_date'));
-        $MetaList->add('mainEntityOfPage', $Site->getUrlRewrittenWithHost());
+        self::populateJsonLd($MetaList, $Site, $author, $preferredImage);
+        return $MetaList;
+    }
+
+    /**
+     * @param QUI\Interfaces\Projects\Site $Site
+     */
+    public static function createJsonLd($Site, ?string $author = null, string $preferredImage = ''): JsonLd
+    {
+        $JsonLd = new JsonLd();
+        self::populateJsonLd($JsonLd, $Site, $author, $preferredImage);
+        return $JsonLd;
+    }
+
+    /**
+     * @param QUI\Interfaces\Projects\Site $Site
+     */
+    private static function populateJsonLd(JsonLd $JsonLd, $Site, ?string $author, string $preferredImage): void
+    {
+        $JsonLd->set('type', 'NewsArticle');
+        $JsonLd->set('@id', $Site->getUrlRewrittenWithHost() . '#newsarticle');
+        $JsonLd->add('headline', $Site->getAttribute('title'));
+        $JsonLd->add('description', $Site->getAttribute('short'));
+        $JsonLd->add('datePublished', self::getDisplayDate($Site));
+        $dateModified = StructuredData::getModificationDate(
+            $Site->getAttribute('c_date'),
+            $Site->getAttribute('e_date')
+        );
+
+        if ($dateModified !== null) {
+            $JsonLd->set('dateModified', $dateModified);
+        }
+
+        $JsonLd->add('mainEntityOfPage', $Site->getUrlRewrittenWithHost());
 
         if ($author) {
-            $MetaList->add('author', $author);
+            $JsonLd->add('author', $author);
         }
 
         $Publisher = new Publisher();
         $Publisher->importFromProject($Site->getProject());
-        $MetaList->add('publisher', $Publisher);
+        $JsonLd->add('publisher', $Publisher);
 
         $imageAbsolutePath = self::getAbsoluteImageUrl($Site, $preferredImage);
 
         if ($imageAbsolutePath !== '') {
-            $MetaList->add('image', $imageAbsolutePath);
+            $JsonLd->add('image', $imageAbsolutePath);
         }
-
-        return $MetaList;
     }
 
     /**

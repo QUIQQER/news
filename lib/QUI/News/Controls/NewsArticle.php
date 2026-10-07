@@ -47,6 +47,7 @@ class NewsArticle extends QUI\Control
     public function __construct(array $attributes = [])
     {
         $this->setAttributes([
+            'ownJsonLd' => true,
             'layout' => 'default',
             'headerImage' => '',
             'metaVisibility' => 'default',
@@ -98,7 +99,6 @@ class NewsArticle extends QUI\Control
             (string)$this->getAttribute('headerImage')
         );
 
-        $MetaList = EntryData::createMetaList($Site, $authorData['author'], $displayImage);
         $moreEntries = EntryData::getMoreEntries($Site, (int)$this->getAttribute('moreAmount'));
         $moreTemplate = dirname(__FILE__) . '/NewsArticle.more.' . $this->getAttribute('moreTemplate') . '.html';
 
@@ -106,19 +106,8 @@ class NewsArticle extends QUI\Control
             $moreTemplate = dirname(__FILE__) . '/NewsArticle.more.default.html';
         }
 
-        $Template = $Engine->getTemplateVariable('Template');
-
-        if ($Template instanceof QUI\Template) {
-            try {
-                $Template->extendHeader($MetaList->getJsonLdSchema());
-            } catch (QUI\Exception $Exception) {
-                QUI\System\Log::addWarning($Exception->getMessage());
-            }
-        }
-
         $Engine->assign([
             'Site' => $Site,
-            'MetaList' => $MetaList,
             'date' => EntryData::getDisplayDate($Site),
             'author' => $authorData['author'],
             'headerImage' => $displayImage,
@@ -137,7 +126,37 @@ class NewsArticle extends QUI\Control
             'layout' => $layout
         ]);
 
-        return $Engine->fetch($template);
+        return $Engine->fetch($template) . $this->getOwnJsonLd();
+    }
+
+    /**
+     * Build article data on explicit request. Never changes the global page graph.
+     */
+    public function getJsonLd(): QUI\Utils\JsonLd
+    {
+        $Site = $this->getSite();
+        $authorData = EntryData::resolveAuthorData($Site, [
+            'enabled' => (bool)$this->getAttribute('guestAuthorEnable'),
+            'user' => $this->getAttribute('guestAuthorUser'),
+            'name' => $this->getAttribute('guestAuthorName'),
+            'avatar' => $this->getAttribute('guestAuthorAvatar')
+        ]);
+
+        return EntryData::createJsonLd($Site, $authorData['author'], (string)$this->getAttribute('headerImage'));
+    }
+
+    protected function getOwnJsonLd(): string
+    {
+        if (!$this->getAttribute('ownJsonLd')) {
+            return '';
+        }
+
+        try {
+            return $this->getJsonLd()->getJsonLdSchema();
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::addWarning($Exception->getMessage());
+            return '';
+        }
     }
 
     /**

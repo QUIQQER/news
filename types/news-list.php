@@ -84,7 +84,12 @@ $ChildrenList->addEvent('onMetaList', function (
 
         $MetaList->add('author', $User->getName());
     } catch (QUI\Exception $Exception) {
-        QUI\System\Log::writeException($Exception);
+        if (
+            !$Exception instanceof QUI\Users\Exception
+            || $Exception->getCode() !== 404
+        ) {
+            QUI\System\Log::writeException($Exception);
+        }
     }
 
     // publisher

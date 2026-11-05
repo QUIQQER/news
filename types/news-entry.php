@@ -83,11 +83,16 @@ if ($quiqqerUser) {
         $userName = $User->getName();
         $Engine->assign('author', $User->getName());
     } catch (QUI\Exception $Exception) {
-        QUI\System\Log::addInfo($Exception->getMessage(), [
-            'project' => $Project->getName(),
-            'lang' => $Project->getLang(),
-            'site' => $Site->getId()
-        ]);
+        if (
+            !$Exception instanceof QUI\Users\Exception
+            || $Exception->getCode() !== 404
+        ) {
+            QUI\System\Log::addInfo($Exception->getMessage(), [
+                'project' => $Project->getName(),
+                'lang' => $Project->getLang(),
+                'site' => $Site->getId()
+            ]);
+        }
         $Engine->assign('author', null);
     }
 } else {

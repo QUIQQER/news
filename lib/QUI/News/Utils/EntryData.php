@@ -75,13 +75,18 @@ class EntryData
                     'avatar' => $userAvatar
                 ];
             } catch (QUI\Exception $Exception) {
-                $Project = $Site->getProject();
+                if (
+                    !$Exception instanceof QUI\Users\Exception
+                    || $Exception->getCode() !== 404
+                ) {
+                    $Project = $Site->getProject();
 
-                QUI\System\Log::addInfo($Exception->getMessage(), [
-                    'project' => $Project->getName(),
-                    'lang' => $Project->getLang(),
-                    'site' => $Site->getId()
-                ]);
+                    QUI\System\Log::addInfo($Exception->getMessage(), [
+                        'project' => $Project->getName(),
+                        'lang' => $Project->getLang(),
+                        'site' => $Site->getId()
+                    ]);
+                }
             }
         }
 

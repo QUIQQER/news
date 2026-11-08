@@ -1,8 +1,9 @@
 .quiqqer-news-controls-author {
-    --_initialsBackground: var(--quiqqer-news-controls-author-initialsBackground, var(--_q-controlConf-initialsBackground, var(--qui-colors-surface-subtle, light-dark(#f1f3f5, #2b3035))));
-    --_initialsColor: var(--quiqqer-news-controls-author-initialsColor, var(--_q-controlConf-initialsColor, var(--qui-colors-text, light-dark(#202428, #f1f3f5))));
+    --_initialsBackground: var(--quiqqer-news-controls-author-initialsBackground, var(--_q-controlConf-initialsBackground, var(--qui-colors-surface-subtle, color-mix(in srgb, currentColor 8%, transparent))));
+    --_initialsColor: var(--quiqqer-news-controls-author-initialsColor, var(--_q-controlConf-initialsColor, var(--qui-colors-text, currentColor)));
     --_gap: var(--quiqqer-news-controls-author-gap, var(--qui-spacing-lg, 1.5rem));
     --_textGap: var(--quiqqer-news-controls-author-textGap, var(--qui-spacing-sm, 0.5rem));
+    --_infoFontSize: var(--qui-fs-sm, 0.875rem);
 
     container: quiqqer-news-author / inline-size;
     min-width: 0;
@@ -41,7 +42,6 @@
     background: var(--_initialsBackground);
     color: var(--_initialsColor);
     font-size: calc(var(--_avatarSize) / 3);
-    font-weight: 500;
 }
 
 .quiqqer-news-controls-author__identity {
@@ -55,7 +55,7 @@
 }
 
 .quiqqer-news-controls-author__info {
-    font-size: 0.875em;
+    font-size: var(--_infoFontSize);
 }
 
 .quiqqer-news-controls-author__description {

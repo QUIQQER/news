@@ -8,7 +8,7 @@
         {if $authorAvatar !== ''}
             <img src="{$authorAvatar|escape:'html'}" alt="" loading="lazy" decoding="async">
         {else}
-            <span class="quiqqer-news-controls-author__initials">{$authorProfile.initials|escape:'html'}</span>
+            <strong class="quiqqer-news-controls-author__initials">{$authorProfile.initials|escape:'html'}</strong>
         {/if}
     </div>
     <div class="quiqqer-news-controls-author__identity">

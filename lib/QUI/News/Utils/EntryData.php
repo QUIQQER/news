@@ -19,6 +19,27 @@ use function strpos;
 class EntryData
 {
     /**
+     * Keep the historic attribute namespaces of both news page types.
+     *
+     * @return array{enabled:bool, user:mixed, name:mixed, avatar:mixed, description:mixed, additionalInfo:mixed}
+     */
+    public static function getGuestAuthorSettings(QUI\Interfaces\Projects\Site $Site): array
+    {
+        $prefix = $Site->getAttribute('type') === 'quiqqer/news:types/news-entry'
+            ? 'quiqqer.settings.news.guestAuthor.'
+            : 'quiqqer.news.settings.guestAuthor.';
+
+        return [
+            'enabled' => (bool)$Site->getAttribute($prefix . 'enable'),
+            'user' => $Site->getAttribute($prefix . 'quiqqerUser'),
+            'name' => $Site->getAttribute($prefix . 'name'),
+            'avatar' => $Site->getAttribute($prefix . 'avatar'),
+            'description' => $Site->getAttribute($prefix . 'description'),
+            'additionalInfo' => $Site->getAttribute($prefix . 'additionalInfo')
+        ];
+    }
+
+    /**
      * @param QUI\Interfaces\Projects\Site $Site
      * @return string
      */
@@ -51,12 +72,12 @@ class EntryData
 
         if (!empty($guestAuthor['enabled'])) {
             $guestUser = $guestAuthor['user'] ?? null;
-            $guestName = $guestAuthor['name'] ?? null;
+            $guestName = AuthorData::normalizeName((string)($guestAuthor['name'] ?? ''));
             $guestAvatar = $guestAuthor['avatar'] ?? null;
 
             if ($guestUser) {
                 $quiqqerUser = $guestUser;
-            } elseif ($guestName) {
+            } elseif ($guestName !== '') {
                 $userName = (string)$guestName;
                 $quiqqerUser = null;
 
@@ -69,10 +90,12 @@ class EntryData
         if ($quiqqerUser) {
             try {
                 $User = QUI::getUsers()->get($quiqqerUser);
+                $name = AuthorData::normalizeName($User->getName());
 
                 return [
-                    'author' => $User->getName(),
-                    'avatar' => $userAvatar
+                    'author' => $name !== '' ? $name : null,
+                    // getAvatar() may return a generic project placeholder.
+                    'avatar' => $User->getAttribute('avatar')
                 ];
             } catch (QUI\Exception $Exception) {
                 if (

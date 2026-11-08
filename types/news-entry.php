@@ -55,49 +55,9 @@ if (!$showCreator && !$showDate) {
 /**
  * Author
  */
-$quiqqerUser = $Site->getAttribute('c_user');
-$userName = null;
-$userAvatar = null;
-
-// guest author enabled?
-if ($Site->getAttribute('quiqqer.settings.news.guestAuthor.enable')) {
-    $guestUser = $Site->getAttribute('quiqqer.settings.news.guestAuthor.quiqqerUser');
-    $guestName = $Site->getAttribute('quiqqer.settings.news.guestAuthor.name');
-    $guestAvatar = $Site->getAttribute('quiqqer.settings.news.guestAuthor.avatar');
-
-    if ($guestUser) {
-        $quiqqerUser = $guestUser;
-    } elseif ($guestName) {
-        $userName = $guestName;
-        $quiqqerUser = null;
-
-        if ($guestAvatar) {
-            $userAvatar = $guestAvatar;
-        }
-    }
-}
-
-if ($quiqqerUser) {
-    try {
-        $User = QUI::getUsers()->get($quiqqerUser);
-        $userName = $User->getName();
-        $Engine->assign('author', $User->getName());
-    } catch (QUI\Exception $Exception) {
-        if (
-            !$Exception instanceof QUI\Users\Exception
-            || $Exception->getCode() !== 404
-        ) {
-            QUI\System\Log::addInfo($Exception->getMessage(), [
-                'project' => $Project->getName(),
-                'lang' => $Project->getLang(),
-                'site' => $Site->getId()
-            ]);
-        }
-        $Engine->assign('author', null);
-    }
-} else {
-    $Engine->assign('author', $userName);
-}
+$authorData = EntryData::resolveAuthorData($Site, EntryData::getGuestAuthorSettings($Site));
+$userName = $authorData['author'];
+$Engine->assign('author', $userName);
 
 try {
     $ArticleJsonLd = EntryData::createJsonLd($Site, $userName);

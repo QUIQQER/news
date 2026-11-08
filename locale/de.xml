@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/locale.xsd">
 <locales>
     <groups name="quiqqer/news" datatype="php,js">
         <locale name="package.title">
@@ -463,4 +465,52 @@
 <de><![CDATA[Benutzerbild]]></de>
         </locale>
     </groups>
+    <groups name="quiqqer/news" datatype="php,js">
+        <locale name="brick.author.title">
+            <de><![CDATA[News-Autor]]></de>
+        </locale>
+        <locale name="brick.author.description">
+            <de><![CDATA[Zeigt den Autor des aktuellen News-Eintrags oder News-Artikels als ruhige Autorenkarte. Für Inhalte und Sidebars geeignet; Gastautoren werden in den Seiteneinstellungen gepflegt.]]></de>
+        </locale>
+        <locale name="brick.author.showTitle">
+            <de><![CDATA[Bausteintitel anzeigen]]></de>
+        </locale>
+        <locale name="brick.author.layout">
+            <de><![CDATA[Vorlage]]></de>
+        </locale>
+        <locale name="brick.author.layout.left">
+            <de><![CDATA[Bild links]]></de>
+        </locale>
+        <locale name="brick.author.layout.top">
+            <de><![CDATA[Bild oben – alles zentriert]]></de>
+        </locale>
+        <locale name="brick.author.layout.topLeft">
+            <de><![CDATA[Bild oben – alles linksbündig]]></de>
+        </locale>
+        <locale name="brick.author.layout.topTextLeft">
+            <de><![CDATA[Bild oben – Text linksbündig]]></de>
+        </locale>
+        <locale name="brick.author.layout.description">
+            <de><![CDATA[Wählen Sie die Anordnung der Autorenkarte. Bei „Bild oben – Text linksbündig“ bleiben Bild, Name und Zusatzinfo zentriert; nur die Beschreibung ist linksbündig. „Kompakt“ zeigt ein kleines Bild neben dem Namen und die Beschreibung darunter.]]></de>
+        </locale>
+        <locale name="brick.author.layout.compact">
+            <de><![CDATA[Kompakt]]></de>
+        </locale>
+        <locale name="brick.author.initialsBackground">
+            <de><![CDATA[Hintergrundfarbe der Initialen]]></de>
+        </locale>
+        <locale name="brick.author.initialsColor">
+            <de><![CDATA[Schriftfarbe der Initialen]]></de>
+        </locale>
+        <locale name="guestAuthor.avatar">
+            <de><![CDATA[Bild des freien Gastautors]]></de>
+        </locale>
+        <locale name="guestAuthor.description">
+            <de><![CDATA[Kurzbeschreibung des freien Gastautors (Klartext)]]></de>
+        </locale>
+        <locale name="guestAuthor.additionalInfo">
+            <de><![CDATA[Zusatzinfo des freien Gastautors]]></de>
+        </locale>
+    </groups>
 </locales>
+</quiqqer>

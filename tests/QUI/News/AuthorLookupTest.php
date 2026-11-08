@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 use QUI;
 use QUI\Interfaces\Template\EngineInterface;
 use QUI\Interfaces\Users\User;
+use QUI\News\Utils\AuthorData;
 use QUI\Projects\Project;
 use QUI\Projects\Site;
 use QUI\Template;
@@ -98,8 +99,11 @@ class AuthorLookupTest extends TestCase
             'news.settings.entry.more.amount', 'blog.settings.entries.more.amount' => 0,
             default => ''
         });
+        $guestPrefix = $type === 'news-entry'
+            ? 'quiqqer.settings.news.guestAuthor.'
+            : 'quiqqer.news.settings.guestAuthor.';
         $attributes = [
-            'type' => 'quiqqer/news:types/news-article',
+            'type' => 'quiqqer/news:types/' . ($type === 'list' ? 'news-article' : $type),
             'title' => 'Test entry',
             'short' => 'Summary',
             'c_user' => 'creator-uuid',
@@ -109,12 +113,9 @@ class AuthorLookupTest extends TestCase
             'quiqqer.tags.tagList' => [],
             'quiqqer.settings.news.entry.dateAndCreator' => 'showAll',
             'quiqqer.news.settings.meta.visibility' => 'showAll',
-            'quiqqer.settings.news.guestAuthor.enable' => $guest,
-            'quiqqer.settings.news.guestAuthor.quiqqerUser' => $result === 'guest-name' ? '' : 'guest-uuid',
-            'quiqqer.settings.news.guestAuthor.name' => 'Guest writer',
-            'quiqqer.news.settings.guestAuthor.enable' => $guest,
-            'quiqqer.news.settings.guestAuthor.quiqqerUser' => $result === 'guest-name' ? '' : 'guest-uuid',
-            'quiqqer.news.settings.guestAuthor.name' => 'Guest writer',
+            $guestPrefix . 'enable' => $guest,
+            $guestPrefix . 'quiqqerUser' => $result === 'guest-name' ? '' : 'guest-uuid',
+            $guestPrefix . 'name' => 'Guest writer',
             'quiqqer.settings.news.max' => 1,
             'quiqqer.settings.news.showCreator' => false,
             'quiqqer.settings.news.filter' => 'disabled',
@@ -146,6 +147,16 @@ class AuthorLookupTest extends TestCase
         QUI::$Template = $Template;
 
         require dirname(__DIR__, 3) . '/types/' . ($type === 'list' ? 'news-list' : $type) . '.php';
+
+        if ($type !== 'list') {
+            $card = AuthorData::resolve($Site);
+            $cardAuthor = match ($result) {
+                'present' => 'Existing author',
+                'guest-name' => 'Guest writer',
+                default => null
+            };
+            $this->assertSame($cardAuthor, $card['name'] ?? null);
+        }
 
         if ($type === 'list') {
             $article = $Page->getJsonLdNode('newsList')['itemListElement'][0];

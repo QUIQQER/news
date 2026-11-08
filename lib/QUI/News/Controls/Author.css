@@ -85,12 +85,20 @@
 .quiqqer-news-controls-author__card--topLeft .quiqqer-news-controls-author__description,
 .quiqqer-news-controls-author__card--topTextLeft .quiqqer-news-controls-author__description {
     grid-column: 1;
+}
+
+.quiqqer-news-controls-author__card--top .quiqqer-news-controls-author__description,
+.quiqqer-news-controls-author__card--topTextLeft .quiqqer-news-controls-author__description {
     max-width: 44ch;
 }
 
 .quiqqer-news-controls-author__card--topLeft {
     justify-items: start;
     text-align: left;
+}
+
+.quiqqer-news-controls-author__card--topLeft .quiqqer-news-controls-author__description {
+    justify-self: stretch;
 }
 
 .quiqqer-news-controls-author__card--topTextLeft .quiqqer-news-controls-author__description {

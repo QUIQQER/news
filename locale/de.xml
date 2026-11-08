@@ -472,9 +472,6 @@
         <locale name="brick.author.description">
             <de><![CDATA[Zeigt den Autor des aktuellen News-Eintrags oder News-Artikels als ruhige Autorenkarte. Für Inhalte und Sidebars geeignet; Gastautoren werden in den Seiteneinstellungen gepflegt.]]></de>
         </locale>
-        <locale name="brick.author.showTitle">
-            <de><![CDATA[Bausteintitel anzeigen]]></de>
-        </locale>
         <locale name="brick.author.layout">
             <de><![CDATA[Vorlage]]></de>
         </locale>

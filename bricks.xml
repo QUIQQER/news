@@ -5,10 +5,6 @@
             <title><locale group="quiqqer/news" var="brick.author.title"/></title>
             <description><locale group="quiqqer/news" var="brick.author.description"/></description>
             <settings>
-                <setting name="showTitle" type="checkbox">
-                    <locale group="quiqqer/news" var="brick.author.showTitle"/>
-                    <defaultValue>1</defaultValue>
-                </setting>
                 <setting name="authorLayout" type="select">
                     <locale group="quiqqer/news" var="brick.author.layout"/>
                     <description>

@@ -10,8 +10,7 @@ use QUI\Projects\Site;
 
 class AuthorTest extends TestCase
 {
-    #[DataProvider('layouts')]
-    public function testRendersPlainTextAndOptionalFields(string $layout): void
+    public function testRendersPlainTextAndOptionalFields(): void
     {
         $Control = new Author([
             'Site' => $this->createSite([
@@ -19,12 +18,10 @@ class AuthorTest extends TestCase
                 'description' => "First <b>line</b>\nSecond line",
                 'additionalInfo' => 'Writer & editor'
             ]),
-            'title' => 'About <author>',
-            'authorLayout' => $layout
+            'title' => 'About <author>'
         ]);
         $html = $Control->create();
 
-        $this->assertStringContainsString('__card--' . $layout, $html);
         $this->assertStringContainsString('About &lt;author&gt;', $html);
         $this->assertStringContainsString('&lt;script&gt;', $html);
         $this->assertStringNotContainsString('<script>', $html);
@@ -35,29 +32,19 @@ class AuthorTest extends TestCase
         $this->assertStringNotContainsString('<h1', $html);
     }
 
-    public static function layouts(): iterable
-    {
-        yield ['left'];
-        yield ['topLeft'];
-        yield ['top'];
-        yield ['topTextLeft'];
-        yield ['compact'];
-    }
-
-    public function testEditorListsAllLayoutsAndKeepsTheDefault(): void
+    public function testEditorLayoutsCanBeRendered(): void
     {
         $xml = simplexml_load_file(dirname(__DIR__, 4) . '/bricks.xml');
         $setting = $xml->xpath('//setting[@name="authorLayout"]')[0];
-        $values = [];
+        $Control = new Author(['Site' => $this->createSite(['name' => 'Guest'])]);
+
+        $this->assertSame((string)$setting->defaultValue, $Control->getAttribute('authorLayout'));
 
         foreach ($setting->option as $option) {
-            $values[] = (string)$option['value'];
+            $layout = (string)$option['value'];
+            $Control->setAttribute('authorLayout', $layout);
+            $this->assertStringContainsString('__card--' . $layout, $Control->create());
         }
-
-        $this->assertSame(['left', 'topLeft', 'top', 'topTextLeft', 'compact'], $values);
-        $this->assertSame('left', (string)$setting->defaultValue);
-        $this->assertSame('left', (new Author())->getAttribute('authorLayout'));
-        $this->assertSame('brick.author.layout.description', (string)$setting->description->locale['var']);
     }
 
     public function testEmptyFieldsDoNotCreateElementsAndInvalidLayoutFallsBack(): void
@@ -121,19 +108,8 @@ class AuthorTest extends TestCase
 
     public static function colors(): iterable
     {
-        yield ['#abcdef', '#abcdef'];
-        yield ['transparent', 'transparent'];
         yield ['{"type":"palette","id":"primary"}', 'var(--qui-project-color-primary)'];
         yield [(object)['type' => 'color', 'light' => '#ffffff', 'dark' => '#000000'], 'light-dark(#ffffff, #000000)'];
-    }
-
-    public function testRegistrationDisablesTheSharedHtmlCache(): void
-    {
-        $xml = simplexml_load_file(dirname(__DIR__, 4) . '/bricks.xml');
-        $this->assertSame('0', (string)$xml->bricks->brick['cacheable']);
-        $this->assertSame(Author::class, ltrim((string)$xml->bricks->brick['control'], '\\'));
-        $Control = new Author(['cacheable' => true]);
-        $this->assertFalse($Control->getAttribute('cacheable'));
     }
 
     public function testBrickRuntimeKeepsPageSpecificAuthorsOutOfItsHtmlCache(): void

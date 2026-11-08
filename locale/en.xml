@@ -472,9 +472,6 @@
         <locale name="brick.author.description">
             <en><![CDATA[Shows the author of the current news entry or news article in an author card. Suitable for content areas and sidebars; guest authors are managed in the page settings.]]></en>
         </locale>
-        <locale name="brick.author.showTitle">
-            <en><![CDATA[Show brick title]]></en>
-        </locale>
         <locale name="brick.author.layout">
             <en><![CDATA[Layout]]></en>
         </locale>

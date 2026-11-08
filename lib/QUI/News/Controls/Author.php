@@ -24,7 +24,6 @@ class Author extends QUI\Control
             'nodeName' => 'aside',
             'class' => 'quiqqer-news-controls-author',
             'authorLayout' => 'left',
-            'showTitle' => true,
             'initialsBackground' => '',
             'initialsColor' => ''
         ]);

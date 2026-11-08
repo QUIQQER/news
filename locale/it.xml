@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <locales>
     <groups name="quiqqer/news" datatype="php,js">
-        <locale name="package.title">
+        <locale name="package.title" context="administration">
 <it><![CDATA[QUIQQER - Notizie]]></it>
         </locale>
-        <locale name="package.description" html="true">
+        <locale name="package.description" html="true" context="administration">
 <it><![CDATA[Il modulo notizie aggiunge a QUIQQER un sistema per creare e presentare notizie in modo accattivante. Include due tipi di pagina con numerose opzioni: «Elenco notizie», per mostrare le notizie in vari modi, e «Notizia», per scriverne il contenuto.]]></it>
         </locale>
-        <locale name="quiqqer/news:types/news-entry.description">
+        <locale name="quiqqer/news:types/news-entry.description" context="administration">
 <it><![CDATA[Crea una pagina per scrivere una notizia. Le voci vengono mostrate nell’elenco notizie superiore.]]></it>
         </locale>
-        <locale name="quiqqer/news:types/news-entry.title">
+        <locale name="quiqqer/news:types/news-entry.title" context="administration">
 <it><![CDATA[QUIQQER - Notizia]]></it>
         </locale>
-        <locale name="quiqqer/news:types/news-list.description">
+        <locale name="quiqqer/news:types/news-list.description" context="administration">
 <it><![CDATA[Crea un elenco notizie. Verranno elencate tutte le sue sottopagine.]]></it>
         </locale>
-        <locale name="quiqqer/news:types/news-list.title">
+        <locale name="quiqqer/news:types/news-list.title" context="administration">
 <it><![CDATA[QUIQQER - Elenco notizie]]></it>
         </locale>
     </groups>
 
     <groups name="quiqqer/news" datatype="php">
 <!-- site typ news -->
-        <locale name="admin.types.news.list">
+        <locale name="admin.types.news.list" context="administration">
 <it><![CDATA[Elenco notizie]]></it>
         </locale>
         <locale name="admin.types.news.list.desc">
 <it><![CDATA[Elenco notizie]]></it>
         </locale>
-        <locale name="admin.types.news.entry">
+        <locale name="admin.types.news.entry" context="administration">
 <it><![CDATA[Notizia]]></it>
         </locale>
         <locale name="admin.types.news.entry.desc">
 <it><![CDATA[Notizie]]></it>
         </locale>
-        <locale name="admin.types.news.article">
+        <locale name="admin.types.news.article" context="administration">
 <it><![CDATA[Articolo]]></it>
         </locale>
-        <locale name="admin.types.news.article.desc">
+        <locale name="admin.types.news.article.desc" context="administration">
 <it><![CDATA[Tipo di pagina articolo per notizie con contenuti editoriali dettagliati]]></it>
         </locale>
 
 <!-- Site list settings -->
-        <locale name="quiqqer.news.list.settings.title">
+        <locale name="quiqqer.news.list.settings.title" context="administration">
 <it><![CDATA[Impostazioni dell’elenco notizie]]></it>
         </locale>
 
 <!-- defaults for new child sites -->
-        <locale name="quiqqer.news.list.settings.childrenDefaults.title">
+        <locale name="quiqqer.news.list.settings.childrenDefaults.title" context="administration">
 <it><![CDATA[Valori predefiniti per le nuove sottopagine]]></it>
         </locale>
-        <locale name="quiqqer.news.list.settings.childrenDefaults.type">
+        <locale name="quiqqer.news.list.settings.childrenDefaults.type" context="administration">
 <it><![CDATA[Tipo di pagina predefinito]]></it>
         </locale>
-        <locale name="quiqqer.news.list.settings.childrenDefaults.type.desc">
+        <locale name="quiqqer.news.list.settings.childrenDefaults.type.desc" context="administration">
 <it><![CDATA[Tipo di pagina preselezionato quando crei una sottopagina. Se vuoto, viene utilizzato il valore predefinito del tipo di pagina.]]></it>
         </locale>
-        <locale name="quiqqer.news.list.settings.childrenDefaults.layout">
+        <locale name="quiqqer.news.list.settings.childrenDefaults.layout" context="administration">
 <it><![CDATA[Layout predefinito]]></it>
         </locale>
-        <locale name="quiqqer.news.list.settings.childrenDefaults.layout.desc">
+        <locale name="quiqqer.news.list.settings.childrenDefaults.layout.desc" context="administration">
 <it><![CDATA[Layout preselezionato quando crei una sottopagina. Se vuoto, viene utilizzato il layout predefinito.]]></it>
         </locale>
 
 <!-- max site -->
-        <locale name="quiqqer.news.list.settings.max">
+        <locale name="quiqqer.news.list.settings.max" context="administration">
 <it><![CDATA[Numero di notizie per pagina]]></it>
         </locale>
 
 <!-- News template -->
-        <locale name="list.template">
+        <locale name="list.template" context="administration">
 <it><![CDATA[Layout]]></it>
         </locale>
 
 <!-- show author -->
-        <locale name="list.showCreator">
+        <locale name="list.showCreator" context="administration">
 <it><![CDATA[Mostra autore]]></it>
         </locale>
 
@@ -85,73 +85,73 @@
         </locale>
 
 <!-- Site entry settings -->
-        <locale name="quiqqer.news.entry.settings.title">
+        <locale name="quiqqer.news.entry.settings.title" context="administration">
 <it><![CDATA[Impostazioni della notizia]]></it>
         </locale>
-        <locale name="quiqqer.settings.news.entry.dateAndCreator">
+        <locale name="quiqqer.settings.news.entry.dateAndCreator" context="administration">
 <it><![CDATA[Autore e data]]></it>
         </locale>
-        <locale name="quiqqer.settings.news.entry.dateAndCreator.default">
+        <locale name="quiqqer.settings.news.entry.dateAndCreator.default" context="administration">
 <it><![CDATA[Usa le impostazioni predefinite]]></it>
         </locale>
-        <locale name="quiqqer.settings.news.entry.dateAndCreator.showAll">
+        <locale name="quiqqer.settings.news.entry.dateAndCreator.showAll" context="administration">
 <it><![CDATA[Mostra autore e data]]></it>
         </locale>
-        <locale name="quiqqer.settings.news.entry.dateAndCreator.showCreator">
+        <locale name="quiqqer.settings.news.entry.dateAndCreator.showCreator" context="administration">
 <it><![CDATA[Mostra solo l’autore]]></it>
         </locale>
-        <locale name="quiqqer.settings.news.entry.dateAndCreator.showDate">
+        <locale name="quiqqer.settings.news.entry.dateAndCreator.showDate" context="administration">
 <it><![CDATA[Mostra solo la data]]></it>
         </locale>
-        <locale name="quiqqer.settings.news.entry.dateAndCreator.hide">
+        <locale name="quiqqer.settings.news.entry.dateAndCreator.hide" context="administration">
 <it><![CDATA[Nascondi]]></it>
         </locale>
-        <locale name="quiqqer.settings.news.pinned">
+        <locale name="quiqqer.settings.news.pinned" context="administration">
 <it><![CDATA[In evidenza]]></it>
         </locale>
-        <locale name="quiqqer.settings.news.pinned.description">
+        <locale name="quiqqer.settings.news.pinned.description" context="administration">
 <it><![CDATA[Le voci in evidenza vengono mostrate prima delle altre negli elenchi notizie.]]></it>
         </locale>
 
-        <locale name="quiqqer.news.article.settings.title">
+        <locale name="quiqqer.news.article.settings.title" context="administration">
 <it><![CDATA[Impostazioni dell’articolo]]></it>
         </locale>
 
-        <locale name="quiqqer.news.settings.newsArticle.layout">
+        <locale name="quiqqer.news.settings.newsArticle.layout" context="administration">
 <it><![CDATA[Layout]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.newsArticle.layout.projectDefault">
+        <locale name="quiqqer.news.settings.newsArticle.layout.projectDefault" context="administration">
 <it><![CDATA[Impostazione predefinita del progetto]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.newsArticle.layout.default">
+        <locale name="quiqqer.news.settings.newsArticle.layout.default" context="administration">
 <it><![CDATA[Predefinito]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.newsArticle.layout.imageFirst">
+        <locale name="quiqqer.news.settings.newsArticle.layout.imageFirst" context="administration">
 <it><![CDATA[Immagine di intestazione per prima]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.newsArticle.headerImage">
+        <locale name="quiqqer.news.settings.newsArticle.headerImage" context="administration">
 <it><![CDATA[Immagine di intestazione]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.newsArticle.headerImage.description">
+        <locale name="quiqqer.news.settings.newsArticle.headerImage.description" context="administration">
 <it><![CDATA[Immagine di intestazione facoltativa. Se vuota, viene usata l’immagine della pagina.]]></it>
         </locale>
 
-        <locale name="quiqqer.news.settings.meta.visibility">
+        <locale name="quiqqer.news.settings.meta.visibility" context="administration">
 <it><![CDATA[Autore e data]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.meta.visibility.default">
+        <locale name="quiqqer.news.settings.meta.visibility.default" context="administration">
 <it><![CDATA[Predefinito]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.meta.visibility.showAll">
+        <locale name="quiqqer.news.settings.meta.visibility.showAll" context="administration">
 <it><![CDATA[Mostra autore e data]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.meta.visibility.showAuthor">
+        <locale name="quiqqer.news.settings.meta.visibility.showAuthor" context="administration">
 <it><![CDATA[Mostra solo l’autore]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.meta.visibility.showDate">
+        <locale name="quiqqer.news.settings.meta.visibility.showDate" context="administration">
 <it><![CDATA[Mostra solo la data]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.meta.visibility.hide">
+        <locale name="quiqqer.news.settings.meta.visibility.hide" context="administration">
 <it><![CDATA[Nascondi]]></it>
         </locale>
 
@@ -188,10 +188,10 @@
         <locale name="list.more">
 <it><![CDATA[altro]]></it>
         </locale>
-        <locale name="entry.news.by">
+        <locale name="entry.news.by" context="frontend">
 <it><![CDATA[di]]></it>
         </locale>
-        <locale name="entry.news.on">
+        <locale name="entry.news.on" context="frontend">
 <it><![CDATA[il]]></it>
         </locale>
         <locale name="entry.news.prev">
@@ -201,11 +201,11 @@
 <it><![CDATA[notizia successiva]]></it>
         </locale>
 
-        <locale name="news.settings.title">
+        <locale name="news.settings.title" context="administration">
 <it><![CDATA[Notizie]]></it>
         </locale>
 
-        <locale name="news.settings.entries.more.title">
+        <locale name="news.settings.entries.more.title" context="administration">
 <it><![CDATA[Altre notizie]]></it>
         </locale>
 
@@ -216,210 +216,210 @@
 <it><![CDATA[La navigazione verso altre notizie non viene mostrata sotto questa voce.]]></it>
         </locale>
 
-        <locale name="news.settings.article.title">
+        <locale name="news.settings.article.title" context="administration">
 <it><![CDATA[Articolo]]></it>
         </locale>
-        <locale name="news.settings.article.defaultLayout.text">
+        <locale name="news.settings.article.defaultLayout.text" context="administration">
 <it><![CDATA[Layout predefinito]]></it>
         </locale>
-        <locale name="news.settings.article.defaultLayout.description">
+        <locale name="news.settings.article.defaultLayout.description" context="administration">
 <it><![CDATA[Definisce il layout predefinito degli articoli quando non ne è stato selezionato uno nella pagina.]]></it>
         </locale>
-        <locale name="news.settings.article.showMoreNews.text">
+        <locale name="news.settings.article.showMoreNews.text" context="administration">
 <it><![CDATA[Mostra altre notizie]]></it>
         </locale>
-        <locale name="news.settings.article.showMoreNews.description">
+        <locale name="news.settings.article.showMoreNews.description" context="administration">
 <it><![CDATA[Mostra o nasconde per impostazione predefinita la navigazione verso altre voci sotto gli articoli.]]></it>
         </locale>
 
-        <locale name="news.settings.article.layout.default.title">
+        <locale name="news.settings.article.layout.default.title" context="administration">
 <it><![CDATA[Articolo: layout predefinito]]></it>
         </locale>
-        <locale name="news.settings.article.layout.default.option">
+        <locale name="news.settings.article.layout.default.option" context="administration">
 <it><![CDATA[Predefinito]]></it>
         </locale>
-        <locale name="news.settings.article.layout.imageFirst.title">
+        <locale name="news.settings.article.layout.imageFirst.title" context="administration">
 <it><![CDATA[Articolo: immagine di intestazione per prima]]></it>
         </locale>
-        <locale name="news.settings.article.layout.imageFirst.option">
+        <locale name="news.settings.article.layout.imageFirst.option" context="administration">
 <it><![CDATA[Immagine di intestazione per prima]]></it>
         </locale>
-        <locale name="news.settings.article.layout.sectionGap.text">
+        <locale name="news.settings.article.layout.sectionGap.text" context="administration">
 <it><![CDATA[Spaziatura tra le sezioni]]></it>
         </locale>
-        <locale name="news.settings.article.layout.sectionGap.description">
+        <locale name="news.settings.article.layout.sectionGap.description" context="administration">
 <it><![CDATA[Controlla la spaziatura verticale tra le sezioni principali dell’articolo.]]></it>
         </locale>
-        <locale name="news.settings.article.layout.titleSize.text">
+        <locale name="news.settings.article.layout.titleSize.text" context="administration">
 <it><![CDATA[Dimensione del carattere del titolo]]></it>
         </locale>
-        <locale name="news.settings.article.layout.titleSize.description">
+        <locale name="news.settings.article.layout.titleSize.description" context="administration">
 <it><![CDATA[Definisce la dimensione del titolo principale dell’articolo.]]></it>
         </locale>
-        <locale name="news.settings.article.layout.centerHeader.text">
+        <locale name="news.settings.article.layout.centerHeader.text" context="administration">
 <it><![CDATA[Centra titolo e descrizione]]></it>
         </locale>
-        <locale name="news.settings.article.layout.centerHeader.description">
+        <locale name="news.settings.article.layout.centerHeader.description" context="administration">
 <it><![CDATA[Centra il titolo, le categorie e la descrizione breve nell’intestazione del layout predefinito.]]></it>
         </locale>
-        <locale name="news.settings.article.layout.headerImageMaxHeight.text">
+        <locale name="news.settings.article.layout.headerImageMaxHeight.text" context="administration">
 <it><![CDATA[Altezza massima dell’immagine di intestazione (px)]]></it>
         </locale>
-        <locale name="news.settings.article.layout.headerImageMaxHeight.description">
+        <locale name="news.settings.article.layout.headerImageMaxHeight.description" context="administration">
 <it><![CDATA[Limita l’altezza dell’immagine di intestazione. Se vuoto, viene usata la visualizzazione predefinita.]]></it>
         </locale>
-        <locale name="news.settings.article.layout.imageFit.text">
+        <locale name="news.settings.article.layout.imageFit.text" context="administration">
 <it><![CDATA[Adattamento dell’immagine di intestazione]]></it>
         </locale>
-        <locale name="news.settings.article.layout.imageFit.description">
+        <locale name="news.settings.article.layout.imageFit.description" context="administration">
 <it><![CDATA[Controlla come viene mostrata l’immagine di intestazione nella larghezza e nell’altezza disponibili.]]></it>
         </locale>
-        <locale name="news.settings.article.layout.imageFit.cover">
+        <locale name="news.settings.article.layout.imageFit.cover" context="administration">
 <it><![CDATA[Riempi l’area e ritaglia l’immagine (cover)]]></it>
         </locale>
-        <locale name="news.settings.article.layout.imageFit.contain">
+        <locale name="news.settings.article.layout.imageFit.contain" context="administration">
 <it><![CDATA[Mostra l’immagine intera senza ritaglio (contain)]]></it>
         </locale>
-        <locale name="news.settings.article.layout.imageWidthMode.text">
+        <locale name="news.settings.article.layout.imageWidthMode.text" context="administration">
 <it><![CDATA[Larghezza dell’immagine di intestazione]]></it>
         </locale>
-        <locale name="news.settings.article.layout.imageWidthMode.description">
+        <locale name="news.settings.article.layout.imageWidthMode.description" context="administration">
 <it><![CDATA[Definisce la larghezza dell’area dell’immagine di intestazione.]]></it>
         </locale>
-        <locale name="news.settings.article.layout.imageWidthMode.auto">
+        <locale name="news.settings.article.layout.imageWidthMode.auto" context="administration">
 <it><![CDATA[Automatico]]></it>
         </locale>
-        <locale name="news.settings.article.layout.imageWidthMode.content">
+        <locale name="news.settings.article.layout.imageWidthMode.content" context="administration">
 <it><![CDATA[Larghezza del contenuto della pagina]]></it>
         </locale>
-        <locale name="news.settings.article.layout.imageWidthMode.custom">
+        <locale name="news.settings.article.layout.imageWidthMode.custom" context="administration">
 <it><![CDATA[Larghezza definita]]></it>
         </locale>
-        <locale name="news.settings.article.layout.headerImageMaxWidth.text">
+        <locale name="news.settings.article.layout.headerImageMaxWidth.text" context="administration">
 <it><![CDATA[Larghezza massima dell’immagine di intestazione (px)]]></it>
         </locale>
-        <locale name="news.settings.article.layout.headerImageMaxWidth.description">
+        <locale name="news.settings.article.layout.headerImageMaxWidth.description" context="administration">
 <it><![CDATA[Viene usato solo se è selezionata «Larghezza definita» per la larghezza dell’immagine.]]></it>
         </locale>
-        <locale name="news.settings.article.layout.headerImageBlurBackground.text">
+        <locale name="news.settings.article.layout.headerImageBlurBackground.text" context="administration">
 <it><![CDATA[Crea uno sfondo colorato dall’immagine di intestazione]]></it>
         </locale>
-        <locale name="news.settings.article.layout.headerImageBlurBackground.description">
+        <locale name="news.settings.article.layout.headerImageBlurBackground.description" context="administration">
 <it><![CDATA[Aggiunge una versione sfocata dell’immagine di intestazione come livello di sfondo per creare un fondo colorato coordinato dietro l’immagine principale.]]></it>
         </locale>
-        <locale name="news.settings.article.layout.headerBackground.text">
+        <locale name="news.settings.article.layout.headerBackground.text" context="administration">
 <it><![CDATA[Colore di sfondo dietro l’immagine di intestazione]]></it>
         </locale>
-        <locale name="news.settings.article.layout.headerBackground.description">
+        <locale name="news.settings.article.layout.headerBackground.description" context="administration">
 <it><![CDATA[Visibile quando non viene generato uno sfondo colorato dall’immagine di intestazione.]]></it>
         </locale>
-        <locale name="news.settings.article.size.small">
+        <locale name="news.settings.article.size.small" context="administration">
 <it><![CDATA[Piccolo]]></it>
         </locale>
-        <locale name="news.settings.article.size.normal">
+        <locale name="news.settings.article.size.normal" context="administration">
 <it><![CDATA[Normale (predefinito)]]></it>
         </locale>
-        <locale name="news.settings.article.size.large">
+        <locale name="news.settings.article.size.large" context="administration">
 <it><![CDATA[Grande]]></it>
         </locale>
-        <locale name="news.settings.article.size.extraLarge">
+        <locale name="news.settings.article.size.extraLarge" context="administration">
 <it><![CDATA[Molto grande]]></it>
         </locale>
-        <locale name="news.settings.article.scale.muchSmaller">
+        <locale name="news.settings.article.scale.muchSmaller" context="administration">
 <it><![CDATA[Molto più piccolo]]></it>
         </locale>
-        <locale name="news.settings.article.scale.smaller">
+        <locale name="news.settings.article.scale.smaller" context="administration">
 <it><![CDATA[Più piccolo]]></it>
         </locale>
-        <locale name="news.settings.article.scale.normal">
+        <locale name="news.settings.article.scale.normal" context="administration">
 <it><![CDATA[Normale (predefinito)]]></it>
         </locale>
-        <locale name="news.settings.article.scale.larger">
+        <locale name="news.settings.article.scale.larger" context="administration">
 <it><![CDATA[Più grande]]></it>
         </locale>
-        <locale name="news.settings.article.scale.muchLarger">
+        <locale name="news.settings.article.scale.muchLarger" context="administration">
 <it><![CDATA[Molto più grande]]></it>
         </locale>
 
-        <locale name="news.settings.entry.title">
+        <locale name="news.settings.entry.title" context="administration">
 <it><![CDATA[Notizia]]></it>
         </locale>
-        <locale name="news.settings.entry.showCreator.text">
+        <locale name="news.settings.entry.showCreator.text" context="administration">
 <it><![CDATA[Mostra autore]]></it>
         </locale>
-        <locale name="news.settings.entry.showDate.text">
+        <locale name="news.settings.entry.showDate.text" context="administration">
 <it><![CDATA[Mostra data]]></it>
         </locale>
-        <locale name="news.settings.entry.showTitle.text">
+        <locale name="news.settings.entry.showTitle.text" context="administration">
 <it><![CDATA[Mostra titolo]]></it>
         </locale>
-        <locale name="news.settings.entry.showDescription.text">
+        <locale name="news.settings.entry.showDescription.text" context="administration">
 <it><![CDATA[Mostra descrizione breve]]></it>
         </locale>
 
-        <locale name="news.settings.entries.more.amount.text">
+        <locale name="news.settings.entries.more.amount.text" context="administration">
 <it><![CDATA[Numero di altre notizie]]></it>
         </locale>
-        <locale name="news.settings.entries.more.amount.description">
+        <locale name="news.settings.entries.more.amount.description" context="administration">
 <it><![CDATA[Numero di voci precedenti e successive a quella attuale mostrate in fondo alla pagina.]]></it>
         </locale>
 
-        <locale name="news.settings.entries.more.show_creator.text">
+        <locale name="news.settings.entries.more.show_creator.text" context="administration">
 <it><![CDATA[Mostra autore]]></it>
         </locale>
 
-        <locale name="news.settings.entries.more.show_date.text">
+        <locale name="news.settings.entries.more.show_date.text" context="administration">
 <it><![CDATA[Mostra la data prima della notizia]]></it>
         </locale>
 
-        <locale name="news.settings.entries.more.show_time.text">
+        <locale name="news.settings.entries.more.show_time.text" context="administration">
 <it><![CDATA[Mostra l’ora prima della notizia]]></it>
         </locale>
 
-        <locale name="entry.news.nav.title">
+        <locale name="entry.news.nav.title" context="frontend">
 <it><![CDATA[Altre notizie:]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.more.title">
+        <locale name="quiqqer.news.settings.more.title" context="administration">
 <it><![CDATA[Altre notizie]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.more.enabled">
+        <locale name="quiqqer.news.settings.more.enabled" context="administration">
 <it><![CDATA[Mostra altre notizie]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.more.amount">
+        <locale name="quiqqer.news.settings.more.amount" context="administration">
 <it><![CDATA[Numero di altre notizie]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.more.amount.description">
+        <locale name="quiqqer.news.settings.more.amount.description" context="administration">
 <it><![CDATA[Numero di notizie precedenti e successive all’articolo attuale da mostrare.]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.more.showDate">
+        <locale name="quiqqer.news.settings.more.showDate" context="administration">
 <it><![CDATA[Mostra data]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.more.showTime">
+        <locale name="quiqqer.news.settings.more.showTime" context="administration">
 <it><![CDATA[Mostra ora]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.more.template">
+        <locale name="quiqqer.news.settings.more.template" context="administration">
 <it><![CDATA[Modello]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.more.template.default">
+        <locale name="quiqqer.news.settings.more.template.default" context="administration">
 <it><![CDATA[Predefinito]]></it>
         </locale>
 
-        <locale name="quiqqer.news.settings.guestAuthor.title">
+        <locale name="quiqqer.news.settings.guestAuthor.title" context="administration">
 <it><![CDATA[Notizie: autore ospite]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.guestAuthor.enable">
+        <locale name="quiqqer.news.settings.guestAuthor.enable" context="administration">
 <it><![CDATA[Attiva autore ospite]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.guestAuthor.enable.description">
+        <locale name="quiqqer.news.settings.guestAuthor.enable.description" context="administration">
 <it><![CDATA[Se attivata, l’autore ospite viene mostrato come autore della notizia.]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.guestAuthor.quiqqerUser">
+        <locale name="quiqqer.news.settings.guestAuthor.quiqqerUser" context="administration">
 <it><![CDATA[Utente]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.guestAuthor.quiqqerUser.description">
+        <locale name="quiqqer.news.settings.guestAuthor.quiqqerUser.description" context="administration">
 <it><![CDATA[Se non esiste un utente nel sistema, compila il campo «Nome» qui sotto.]]></it>
         </locale>
-        <locale name="quiqqer.news.settings.guestAuthor.name">
+        <locale name="quiqqer.news.settings.guestAuthor.name" context="administration">
 <it><![CDATA[Nome]]></it>
         </locale>
         <locale name="sheet.first.page">
@@ -439,26 +439,70 @@
         </locale>
 
 <!-- guest author -->
-        <locale name="site.settings.entry.guestAuthor.title">
+        <locale name="site.settings.entry.guestAuthor.title" context="administration">
 <it><![CDATA[Notizie: autore ospite]]></it>
         </locale>
-        <locale name="site.settings.entry.guestAuthor.enable">
+        <locale name="site.settings.entry.guestAuthor.enable" context="administration">
 <it><![CDATA[Attiva autore ospite]]></it>
         </locale>
-        <locale name="site.settings.entry.guestAuthor.enable.description">
+        <locale name="site.settings.entry.guestAuthor.enable.description" context="administration">
 <it><![CDATA[Se attivata, l’autore ospite viene mostrato come autore della notizia.]]></it>
         </locale>
-        <locale name="site.settings.entry.guestAuthor.quiqqerUser">
+        <locale name="site.settings.entry.guestAuthor.quiqqerUser" context="administration">
 <it><![CDATA[Utente]]></it>
         </locale>
-        <locale name="site.settings.entry.guestAuthor.quiqqerUser.description">
+        <locale name="site.settings.entry.guestAuthor.quiqqerUser.description" context="administration">
 <it><![CDATA[Se non esiste un utente nel sistema, compila il campo «Nome» qui sotto.]]></it>
         </locale>
-        <locale name="site.settings.entry.guestAuthor.name">
+        <locale name="site.settings.entry.guestAuthor.name" context="administration">
 <it><![CDATA[Nome]]></it>
         </locale>
         <locale name="site.settings.entry.guestAuthor.avatar">
 <it><![CDATA[Immagine dell’utente]]></it>
+        </locale>
+    </groups>
+    <groups name="quiqqer/news" datatype="php,js">
+        <locale name="brick.author.title" context="administration">
+            <it><![CDATA[Autore della notizia]]></it>
+        </locale>
+        <locale name="brick.author.description" context="administration">
+            <it><![CDATA[Mostra l’autore della voce o dell’articolo di notizie corrente in una scheda autore. Adatto alle aree di contenuto e alle barre laterali; gli autori ospiti vengono gestiti nelle impostazioni della pagina.]]></it>
+        </locale>
+        <locale name="brick.author.layout" context="administration">
+            <it><![CDATA[Layout]]></it>
+        </locale>
+        <locale name="brick.author.layout.left" context="administration">
+            <it><![CDATA[Immagine a sinistra]]></it>
+        </locale>
+        <locale name="brick.author.layout.top" context="administration">
+            <it><![CDATA[Immagine in alto – tutto centrato]]></it>
+        </locale>
+        <locale name="brick.author.layout.topLeft" context="administration">
+            <it><![CDATA[Immagine in alto – tutto allineato a sinistra]]></it>
+        </locale>
+        <locale name="brick.author.layout.topTextLeft" context="administration">
+            <it><![CDATA[Immagine in alto – testo allineato a sinistra]]></it>
+        </locale>
+        <locale name="brick.author.layout.description" context="administration">
+            <it><![CDATA[Scegli la disposizione della scheda autore. Con «Immagine in alto – testo allineato a sinistra», l’immagine, il nome e le informazioni aggiuntive rimangono centrati; solo la descrizione è allineata a sinistra. «Compatto» mostra una piccola immagine accanto al nome e la descrizione sotto.]]></it>
+        </locale>
+        <locale name="brick.author.layout.compact" context="administration">
+            <it><![CDATA[Compatto]]></it>
+        </locale>
+        <locale name="brick.author.initialsBackground" context="administration">
+            <it><![CDATA[Colore di sfondo delle iniziali]]></it>
+        </locale>
+        <locale name="brick.author.initialsColor" context="administration">
+            <it><![CDATA[Colore del testo delle iniziali]]></it>
+        </locale>
+        <locale name="guestAuthor.avatar" context="administration">
+            <it><![CDATA[Immagine dell’autore ospite inserito manualmente]]></it>
+        </locale>
+        <locale name="guestAuthor.description" context="administration">
+            <it><![CDATA[Breve descrizione dell’autore ospite inserito manualmente (testo semplice)]]></it>
+        </locale>
+        <locale name="guestAuthor.additionalInfo" context="administration">
+            <it><![CDATA[Informazioni aggiuntive sull’autore ospite inserito manualmente]]></it>
         </locale>
     </groups>
 </locales>

@@ -16,7 +16,7 @@
     <section class="quiqqer-news-entry__meta">
         {if $author && $showCreator}
             {t}quiqqer/news entry.news.by{/t}
-            <span class="quiqqer-news-entry__author">{$author}</span>
+            <span class="quiqqer-news-entry__author">{$author|escape:'html'}</span>
         {/if}
 
         {if $showDate}

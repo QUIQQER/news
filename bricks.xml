@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <bricks>
+        <brick control="\QUI\News\Controls\Author" hasContent="0" cacheable="0">
+            <title><locale group="quiqqer/news" var="brick.author.title"/></title>
+            <description><locale group="quiqqer/news" var="brick.author.description"/></description>
+            <settings>
+                <setting name="authorLayout" type="select">
+                    <locale group="quiqqer/news" var="brick.author.layout"/>
+                    <description>
+                        <locale group="quiqqer/news" var="brick.author.layout.description"/>
+                    </description>
+                    <option value="left"><locale group="quiqqer/news" var="brick.author.layout.left"/></option>
+                    <option value="topLeft"><locale group="quiqqer/news" var="brick.author.layout.topLeft"/></option>
+                    <option value="top"><locale group="quiqqer/news" var="brick.author.layout.top"/></option>
+                    <option value="topTextLeft"><locale group="quiqqer/news" var="brick.author.layout.topTextLeft"/></option>
+                    <option value="compact"><locale group="quiqqer/news" var="brick.author.layout.compact"/></option>
+                    <defaultValue>left</defaultValue>
+                </setting>
+                <setting name="initialsBackground" type="color"
+                         data-qui-options-references="1" data-qui-options-dark="1">
+                    <locale group="quiqqer/news" var="brick.author.initialsBackground"/>
+                </setting>
+                <setting name="initialsColor" type="color"
+                         data-qui-options-references="1" data-qui-options-dark="1">
+                    <locale group="quiqqer/news" var="brick.author.initialsColor"/>
+                </setting>
+            </settings>
+        </brick>
+    </bricks>
+</quiqqer>

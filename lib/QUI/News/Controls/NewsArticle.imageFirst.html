@@ -32,7 +32,7 @@
             <div class="quiqqer-news-article__meta">
                 {if $author && $showAuthor}
                     <span class="quiqqer-news-article__author">
-                        {locale group="quiqqer/news" var="entry.news.by"} {$author}
+                        {locale group="quiqqer/news" var="entry.news.by"} {$author|escape:'html'}
                     </span>
                 {/if}
 

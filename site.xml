@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/site.xsd">
 <site>
 
     <types>
@@ -386,6 +388,8 @@
                 <attribute>quiqqer.settings.news.guestAuthor.quiqqerUser</attribute>
                 <attribute>quiqqer.settings.news.guestAuthor.name</attribute>
                 <attribute>quiqqer.settings.news.guestAuthor.avatar</attribute>
+                <attribute>quiqqer.settings.news.guestAuthor.description</attribute>
+                <attribute>quiqqer.settings.news.guestAuthor.additionalInfo</attribute>
             </attributes>
 
             <!-- entry settings -->
@@ -466,13 +470,24 @@
                                 <locale group="quiqqer/news" var="site.settings.entry.guestAuthor.name" />
                             </text>
                         </input>
-                        <!-- todo @michael.daniel -->
-                        <!--                        <input conf="quiqqer.settings.news.guestAuthor.avatar" type="text" class="media-image">-->
-                        <!--                            <text>-->
-                        <!--                                <locale group="quiqqer/news" var="site.settings.entry.guestAuthor.avatar" />-->
-                        <!--                            </text>-->
-                        <!--                        </input>-->
 
+                        <input conf="quiqqer.settings.news.guestAuthor.avatar" type="text" class="media-image">
+                            <text>
+                                <locale group="quiqqer/news" var="guestAuthor.avatar"/>
+                            </text>
+                        </input>
+
+                        <textarea conf="quiqqer.settings.news.guestAuthor.description">
+                            <text>
+                                <locale group="quiqqer/news" var="guestAuthor.description"/>
+                            </text>
+                        </textarea>
+
+                        <input conf="quiqqer.settings.news.guestAuthor.additionalInfo" type="text">
+                            <text>
+                                <locale group="quiqqer/news" var="guestAuthor.additionalInfo"/>
+                            </text>
+                        </input>
                     </settings>
                 </category>
             </settings>
@@ -497,6 +512,8 @@
                 <attribute>quiqqer.news.settings.guestAuthor.quiqqerUser</attribute>
                 <attribute>quiqqer.news.settings.guestAuthor.name</attribute>
                 <attribute>quiqqer.news.settings.guestAuthor.avatar</attribute>
+                <attribute>quiqqer.news.settings.guestAuthor.description</attribute>
+                <attribute>quiqqer.news.settings.guestAuthor.additionalInfo</attribute>
                 <attribute default="0">quiqqer.settings.news.pinned</attribute>
             </attributes>
 
@@ -636,6 +653,24 @@
                                 <locale group="quiqqer/news" var="quiqqer.news.settings.guestAuthor.name" />
                             </text>
                         </input>
+
+                        <input conf="quiqqer.news.settings.guestAuthor.avatar" type="text" class="media-image">
+                            <text>
+                                <locale group="quiqqer/news" var="guestAuthor.avatar"/>
+                            </text>
+                        </input>
+
+                        <textarea conf="quiqqer.news.settings.guestAuthor.description">
+                            <text>
+                                <locale group="quiqqer/news" var="guestAuthor.description"/>
+                            </text>
+                        </textarea>
+
+                        <input conf="quiqqer.news.settings.guestAuthor.additionalInfo" type="text">
+                            <text>
+                                <locale group="quiqqer/news" var="guestAuthor.additionalInfo"/>
+                            </text>
+                        </input>
                     </settings>
                 </category>
             </settings>
@@ -643,3 +678,4 @@
     </types>
 
 </site>
+</quiqqer>

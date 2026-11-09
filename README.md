@@ -20,6 +20,12 @@ Features
 
 - News-List - Sitetype to list news
 - News-Entry - Sitetype to present a news
+- Author cards - Present the author of a news entry or article in responsive
+  layouts suited to content areas and sidebars. Use an existing user or a guest
+  author with a name, image, short description and additional information.
+  When no usable image is available, initials are shown instead, with
+  configurable colours and support for light and dark themes. Author details
+  are managed on the news page, so the same brick can be reused across entries.
 
 Installation
 ------------
